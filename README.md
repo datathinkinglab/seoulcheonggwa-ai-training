@@ -204,7 +204,7 @@ seoulcheonggwa-ai-training/
 │   ├── charts.js       # 슬라이드용 차트 (Chart.js 기반)
 │   ├── chart.umd.min.js# Chart.js 라이브러리 (로컬 포함, 오프라인 동작)
 │   ├── illust.js       # 일러스트 (SVG)
-│   ├── timer.js        # 실습 타이머
+│   ├── timer.js        # 휴식·점심 카운트다운 타이머
 │   ├── instructor-lee.jpg
 │   └── logo-dtl.png
 ├── files/              # 수강생 실습 파일 (01–06, ZIP)
