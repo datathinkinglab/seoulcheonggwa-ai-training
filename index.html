@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI로 시세 읽고, 출하자 브리핑까지 | 서울청과 직원 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css">
+<style>
+/* 표지 */
+.slide.cover{padding:0;background:#F5F8F2}
+.slide.cover .s-top{display:none}
+.slide.cover::after{content:"";position:absolute;right:-140px;top:-200px;width:820px;height:1000px;border-radius:50%;background:linear-gradient(160deg,#6E9A50,#1F5A36);transform:rotate(-12deg);z-index:0}
+.cv-wrap{position:relative;z-index:2;display:flex;height:100%}
+.cv-tx{flex:1.15;padding:80px 0 60px 80px;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.cv-tx h1{margin:0;font-size:84px;line-height:1.12;font-weight:900;letter-spacing:-.04em;color:var(--g900)}
+.cv-tx h1 .o{color:var(--orange)}
+.cv-tx .sub{font-size:24px;line-height:1.65;color:var(--ink2);max-width:680px;margin:0}
+.cv-meta{display:flex;flex-wrap:wrap;gap:12px}
+.cv-meta span{background:#fff;border-radius:14px;padding:12px 18px;font-weight:700;font-size:18px;color:var(--g800);box-shadow:0 4px 12px rgba(31,90,54,.08)}
+.cv-cta{display:flex;gap:14px}
+.cv-cta .btn{font-size:20px;padding:16px 26px}
+.cv-art{flex:1;position:relative}
+.cv-art .lay{position:absolute;transition:transform .3s ease-out}
+.chipf{background:#fff;border-radius:18px;padding:14px 20px;box-shadow:var(--shadow);font-weight:800;color:var(--g800);font-size:22px}
+.chipf.o{background:var(--orange);color:#fff}
+.hint{position:absolute;left:80px;bottom:34px;z-index:3;font-size:16px;color:var(--muted)}
+.hint b{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 8px;margin:0 2px;color:var(--g800)}
+/* 공통 */
+.qbanner{display:flex;align-items:center;gap:30px;background:#fff;border-radius:26px;box-shadow:var(--shadow);padding:26px 36px;border-left:12px solid var(--orange)}
+.qbanner .q{font-size:36px;font-weight:900;color:var(--g900);line-height:1.4;letter-spacing:-.02em}
+.qbanner .q em{font-style:normal;color:var(--orange)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ico{width:56px;height:56px;border-radius:16px;background:var(--g50);display:grid;place-items:center;margin-bottom:12px;font-size:28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{background:var(--g800);color:#fff;border-radius:20px;padding:20px 24px}
+.stat .n{font-size:50px;font-weight:900;letter-spacing:-.03em}
+.stat .n small{font-size:22px;margin-left:4px}
+.stat p{margin:4px 0 0;opacity:.88;font-weight:600;font-size:17px}
+.stat.o{background:var(--orange)}
+/* 시간표 */
+.tline{position:relative;padding-left:34px;display:flex;flex-direction:column;gap:12px}
+.tline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:4px;background:var(--orange);border-radius:4px}
+.ti{position:relative;background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:15px 20px;display:grid;grid-template-columns:130px 1fr auto;gap:14px;align-items:center}
+.ti::before{content:"";position:absolute;left:-31px;top:50%;margin-top:-9px;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--g800)}
+.ti.lunch{background:var(--g50);box-shadow:none}
+.ti .t{font-weight:800;color:var(--orange);font-size:18px}
+.ti .m{font-weight:800;color:var(--g900);font-size:20px}
+.ti .d{font-size:15px;color:var(--muted);margin-top:2px}
+.ti .s{font-size:14px;font-weight:700;color:var(--g800);background:var(--g50);border-radius:8px;padding:5px 10px;white-space:nowrap}
+.donut .mid{position:absolute;left:0;right:0;top:150px;text-align:center;pointer-events:none}
+.donut .mid b{display:block;font-size:44px;color:var(--g900)}
+/* 데이터 */
+.dfile{display:flex;gap:16px;align-items:flex-start}
+.dfile .no{flex:none;width:54px;height:54px;border-radius:14px;background:var(--g800);color:#fff;font-weight:900;font-size:22px;display:grid;place-items:center}
+.dfile.o .no{background:var(--orange)}
+.rule{display:flex;gap:12px;align-items:flex-start;font-size:19px;line-height:1.55;color:var(--ink)}
+.rule i{flex:none;font-style:normal;width:30px;height:30px;border-radius:9px;background:var(--orange-bg);display:grid;place-items:center;font-size:17px}
+/* 강사 */
+.pic{border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg);background:#fff}
+.pic img{width:100%;display:block}
+.name{font-size:46px;font-weight:900;color:var(--g900);letter-spacing:-.02em}
+.name small{font-size:22px;color:var(--muted);margin-left:8px}
+.role{display:flex;gap:8px;flex-wrap:wrap}
+.istats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.istats>div{background:var(--g50);border-radius:16px;padding:14px 18px}
+.istats b{font-size:38px;font-weight:900;color:var(--g800)}
+.istats b small{font-size:17px;margin-left:3px}
+.istats p{margin:2px 0 0;color:var(--ink2);font-weight:600;font-size:15px}
+.career{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.career ul{margin:0;padding:16px 18px 16px 34px;background:#fff;border-radius:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:7px}
+.career li{font-size:15.5px;line-height:1.45;color:var(--ink2)}
+.career li.now{color:var(--g900);font-weight:800}
+/* 모듈 */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;flex:1;min-height:0}
+.mod{position:relative;overflow:hidden;background:#fff;border-radius:22px;box-shadow:var(--shadow);padding:20px 24px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:transform .2s,box-shadow .2s}
+.mod:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.mod .tag2{display:flex;justify-content:space-between;align-items:center}
+.mod .no{background:var(--g800);color:#fff;font-weight:900;border-radius:10px;padding:5px 12px;font-size:18px}
+.mod .tm{font-size:15px;font-weight:700;color:var(--orange)}
+.mod .theme{font-size:15px;font-weight:700;color:var(--g500)}
+.mod h3{margin:0;font-size:24px;line-height:1.3;color:var(--g900);letter-spacing:-.02em}
+.mod p{margin:0;font-size:16px;line-height:1.55;color:var(--ink2)}
+.mod .foot{margin-top:auto;display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:10px;font-size:14px;color:var(--muted)}
+.mod .go{color:var(--orange);font-weight:800}
+.mod.ap{background:var(--g800)}
+.mod.ap h3,.mod.ap p{color:#fff}.mod.ap .no{background:var(--orange)}.mod.ap .foot{color:#cfe0c6;border-color:rgba(255,255,255,.25)}
+.mod .bg{position:absolute;right:-16px;bottom:-20px;width:150px;height:130px;opacity:.16;pointer-events:none}
+</style></head>
+<body class="deck-body" data-module="HOME" data-modtitle="서울청과 직원 AI 활용 교육" data-next="m1.html">
+<div class="deck"><div class="stage">
+
+<!-- 표지 -->
+<section class="slide cover" data-no="표지" data-id="top" data-title="AI로 시세 읽고, 출하자 브리핑까지">
+  <div class="cv-wrap">
+    <div class="cv-tx">
+      <span class="pill pop" style="align-self:flex-start;font-size:18px;padding:8px 18px">서울청과 영업·경매 담당자 AI 활용 교육</span>
+      <h1 class="kinetic">AI로 시세 읽고,</h1>
+      <h1 class="kinetic" style="margin-top:-26px;color:var(--orange)">출하자 브리핑까지</h1>
+      <p class="sub pop">경매 엑셀 한 개에서 시작해 법인 비교, 소매가격과 산지 날씨, <b>반입물량으로 보는 다음 경매</b>까지 근거를 모으고, 출하자에게 보낼 <b>한 장 브리핑</b>을 완성합니다.</p>
+      <div class="cv-meta pop"><span>🗓 1일 8시간 (점심 제외)</span><span>🍅 토마토 · 실제 경매 자료 기반 교육용 데이터</span><span>💬 AI 채팅 파일 분석</span></div>
+      <div class="cv-cta pop"><a class="btn orange" href="m1.html">강의 시작 →</a><button class="btn ghost" onclick="deckGo(5)">모듈 목록</button></div>
+    </div>
+    <div class="cv-art" id="heroArt">
+      <div class="lay" data-d="14" style="width:460px;height:380px;top:300px;left:80px" data-ill="crate"></div>
+      <div class="lay" data-d="30" style="width:280px;height:240px;top:60px;right:40px" data-ill="leaves2"></div>
+      <div class="lay" data-d="22" style="width:250px;height:210px;bottom:20px;right:20px" data-ill="leaves"></div>
+      <div class="lay" data-d="40" style="top:170px;left:30px"><div class="chipf">📉 5,033 → 3,046<span style="color:var(--muted);font-weight:600"> 원/kg</span></div></div>
+      <div class="lay" data-d="34" style="top:250px;right:80px"><div class="chipf o">📦 반입 25.8 → 76.8t</div></div>
+    </div>
+  </div>
+  <div class="hint"><b>←</b><b>→</b> 넘기기 · <b>O</b> 목록 · <b>F</b> 전체 화면</div>
+</section>
+
+<!-- 강사 소개 -->
+<section class="slide" data-no="강사" data-id="instructor" data-title="강사 소개">
+  <h2 class="s-title kinetic">AI와 데이터로 현실의 문제를 푸는 실무 전문가</h2>
+  <div class="s-body" style="gap:40px">
+    <div class="col" style="flex:.62;justify-content:center"><div class="pic tilt pop"><img src="assets/instructor-lee.jpg" alt="이승묵 강사 캐리커처"></div></div>
+    <div class="col" style="flex:1.4;gap:14px;justify-content:center">
+      <div class="name pop">이승묵 <small>Ph.D</small></div>
+      <div class="role pop"><span class="pill green">Data Thinking Lab. 대표 컨설턴트</span><span class="pill soft">AI·데이터 전략 컨설턴트</span><span class="pill soft">AX 자문역</span></div>
+      <p class="pop" style="font-size:18px;line-height:1.7;color:var(--ink2);margin:0">통계학 박사로서 20년 이상의 데이터사이언스·AI/ML 경력을 바탕으로, 유통·금융·제조·바이오 등 여러 기업의 AX 전략과 데이터 기반 경영을 컨설팅·자문해 왔습니다. GS리테일 데이터사이언스부문장으로 편의점 자동 발주와 유통 데이터 활용을 이끌었습니다.</p>
+      <div class="istats pop"><div><b><span data-count="21">0</span><small>개사</small></b><p>컨설팅·자문 수행</p></div><div><b><span data-count="20">0</span><small>년+</small></b><p>데이터·AI 실무 경력</p></div><div><b><span data-count="69">0</span><small>건</small></b><p>기업·기관 강의</p></div></div>
+      <div class="career pop">
+        <ul><li class="now">現 Data Thinking Lab. 대표 컨설턴트</li><li class="now">現 미트박스글로벌 AX 컨설팅 자문역 (AI Advisor)</li><li>前 GS리테일 데이터사이언스부문장 (CDO/상무보)</li><li>前 지니너스 데이터사이언스센터장 (CIO/CDO)</li><li>前 하이퍼라운지 CCO / AI & Data Advisor</li><li>前 현대카드 데이터 컨설팅 · 삼성SDS 책임 컨설턴트</li></ul>
+        <ul><li>HD현대그룹 부서장 AI 역량교육</li><li>한화오션 현장책임자 AI 특강</li><li>롯데호텔 CEO 및 임원 AI 특강</li><li>원익머트리얼즈 임원 AI 업무혁신 교육</li><li>삼성전자 상생협력센터 · AI와 엑셀 활용 업무 자동화</li><li>2023 식품외식산업 전망대회 (농림축산식품부 주최) 발표</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 과정 안내 -->
+<section class="slide" data-no="안내" data-id="about" data-title="과정 안내">
+  <h2 class="s-title kinetic">출하자의 질문 두 개로 시작해서, 근거를 갖춘 답으로 끝납니다</h2>
+  <div class="s-body" style="flex-direction:column;gap:18px">
+    <div class="qbanner pop"><div data-ill="phone" style="width:150px;height:130px;flex:none"></div><div><div class="q">“<em>왜</em> 값이 떨어졌나요? 다음 물량은 <em>언제</em> 보내면 좋을까요?”</div><p class="lead" style="margin:6px 0 0;font-size:19px">추석 연휴 뒤 첫 경매(9/28)에 값이 크게 내린 토마토 사례입니다. 하루 동안 원본에서 확인한 숫자와 다음에 볼 조건을 모아, 마지막 슬라이드에서 이 질문에 다시 답합니다.</p></div></div>
+    <div class="grid3">
+      <div class="card tilt pop"><div class="ico">👥</div><h4>교육 대상</h4><p>서울청과 영업·경매 담당 직원. AI 파일 분석을 처음 사용하는 분도 따라올 수 있게 구성했습니다.</p></div>
+      <div class="card tilt pop"><div class="ico">🔁</div><h4>진행 방식</h4><p>강사가 한 번 보여주고 → 수강생이 파일을 첨부해 <b>수정한 질문</b>을 실행하고 → <b>원본에서 한 가지</b>를 확인합니다.</p></div>
+      <div class="card tilt pop"><div class="ico">📄</div><h4>최종 산출물</h4><p>출하자용 한 장 브리핑, 전화·문자 초안, 다음 업무에서 바꿔 쓸 질문 양식</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat pop"><div class="n"><span data-count="47">0</span><small>장</small></div><p>본편 슬라이드(Wrap-up 6장 포함) + 부록 5</p></div>
+      <div class="stat o pop"><div class="n"><span data-count="16">0</span><small>개</small></div><p>직접 해보는 실습</p></div>
+      <div class="stat pop"><div class="n"><span data-count="346">0</span><small>분</small></div><p>수강생 실습·확인 시간</p></div>
+      <div class="stat pop" style="background:var(--g500)"><div class="n"><span data-count="11">0</span><small>개</small></div><p>바꿔 쓰는 질문 양식 P1~P11</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 시간표 -->
+<section class="slide" data-no="시간표" data-id="schedule" data-title="8시간 수업 운영">
+  <h2 class="s-title kinetic">설명은 짧게, 실습은 길게</h2>
+  <p class="s-sub">설명은 해당 실습 직전의 숫자 예제나 시연으로 제한하고, 실습 중에는 해당 화면을 띄워 둡니다.</p>
+  <div class="s-body">
+    <div class="tline" style="flex:1.65">
+      <div class="ti pop"><div class="t">09:00–10:00</div><div><div class="m">M1. AI가 그려준 시세 그래프, 믿어도 될까?</div><div class="d">설명 20분 · 실습 37분 · 정리 3분</div></div><span class="s">01–09·W1</span></div>
+      <div class="ti pop"><div class="t">10:00–12:00</div><div><div class="m">M2. AI로 우리 법인의 진짜 경쟁력 비교하기</div><div class="d">설명 20분 · 실습 87분 · 정리 3분 · 휴식 10분</div></div><span class="s">10–17·W2</span></div>
+      <div class="ti lunch pop"><div class="t">12:00–13:00</div><div><div class="m">점심</div></div><span class="s">18</span></div>
+      <div class="ti pop"><div class="t">13:00–14:00</div><div><div class="m">M3. 소비지 가격으로 시세 판단의 빈칸 채우기</div><div class="d">설명 12분 · 실습 45분(공공 자료 받기 포함) · 정리 3분</div></div><span class="s">19–24·W3</span></div>
+      <div class="ti pop"><div class="t">14:00–16:00</div><div><div class="m">M4. 다음 주 시세, 무엇을 보면 예상할 수 있을까?</div><div class="d">설명 15분 · 실습 92분(반입물량 예측 포함) · 정리 3분 · 휴식 10분</div></div><span class="s">25–31·W4</span></div>
+      <div class="ti pop"><div class="t">16:00–18:00</div><div><div class="m">M5. AI로 출하자에게 보낼 시세 브리핑 만들기</div><div class="d">설명 15분 · 실습 85분 · 정리 10분(전체 Wrap-up 포함) · 휴식 10분</div></div><span class="s">32–41</span></div>
+    </div>
+    <div class="card donut pop" style="flex:1;display:flex;flex-direction:column"><h4>480분은 이렇게 씁니다</h4><p style="font-size:15px;color:var(--muted)">점심 제외 8시간</p><div style="position:relative;flex:1"><canvas data-chart="cTime"></canvas><div class="mid"><b>72%</b><span style="font-size:15px;color:var(--ink2)">실습·확인</span></div></div></div>
+  </div>
+</section>
+
+<!-- 실습 데이터 -->
+<section class="slide" data-no="데이터" data-id="data" data-title="오늘 쓰는 실습 데이터">
+  <h2 class="s-title kinetic">오늘 쓰는 실습 데이터</h2>
+  <p class="s-sub">서울청과 경매 자료에서 실습마다 필요한 부분만 가져와 <span class="mark">교육용으로 손본 데이터</span>입니다. 시세와 반입물량(수요예측)에 집중합니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.25;gap:14px">
+      <div class="card tilt pop dfile"><span class="no">01</span><div><h4>A법인 토마토 경매 · 거래 1건 = 1행</h4><p>2026-09-14~10-17 · 토마토·대추빨강·방울토마토 · 상자당 가격·상자당 kg·거래무게 · <b>M1~M3</b></p></div></div>
+      <div class="card tilt pop dfile"><span class="no">02</span><div><h4>A~E법인 토마토 경매 · 일자·산지·등급별 집계</h4><p>2026년 9~10월 · 같은 조건 비교와 물량가중 평균 · <b>M2</b></p></div></div>
+      <div class="card tilt pop dfile o"><span class="no">06</span><div><h4>기준일(9/28)까지 일별 반입물량·가격</h4><p>2024년 1월부터 · 과거 추석 사례·요일 패턴으로 다음 경매를 미리 봅니다 · <b>M4~M5</b></p></div></div>
+      <div class="card soft pop dfile"><span class="no" style="background:var(--g500)">05</span><div><h4>AI 초안 오류 찾기</h4><p>단위·누락 날짜·명절 평균·1건짜리 날 · <b>M1</b></p></div></div>
+    </div>
+    <div class="col" style="flex:1;gap:14px">
+      <div class="card pop" style="display:flex;flex-direction:column;gap:14px"><h4>데이터를 이렇게 손봤습니다</h4>
+        <div class="rule"><i>🏷</i><span>법인명은 <b>A~E법인</b>으로 바꿔 표기했습니다.</span></div>
+        <div class="rule"><i>🔢</i><span>가격과 물량을 <b>일부 변경</b>했습니다. 흐름은 실제와 같지만 개별 숫자는 실제 시세가 아닙니다.</span></div>
+        <div class="rule"><i>📍</i><span>산지는 <b>시도</b>까지만 남겼습니다. 출하자를 알 수 있는 정보는 없습니다.</span></div>
+        <div class="rule"><i>📦</i><span><b>수요예측</b>은 그날 경매된 <b>반입물량</b>을 기준으로 합니다.</span></div>
+      </div>
+      <div class="card green pop"><p style="font-size:18px">파일 속 숫자는 <b>교육용</b>입니다. 실제 출하 상담에는 그날의 경매 시스템 자료를 쓰세요.</p></div>
+      <button class="btn orange pop" data-pop="D0" style="align-self:flex-start;font-size:19px;padding:14px 22px">⬇ 실습 자료 모음 열기</button>
+    </div>
+  </div>
+</section>
+
+<!-- 모듈 -->
+<section class="slide" data-no="모듈" data-id="modules" data-title="강의 모듈">
+  <h2 class="s-title kinetic">모듈을 눌러 강의 슬라이드로 들어갑니다</h2>
+  <p class="s-sub">슬라이드에서는 <b>← →</b> 키로 이동하고, <b>O</b> 키로 전체 목록, <b>F</b> 키로 전체 화면을 엽니다. 실습 화면에서 수정한 질문은 이 브라우저에 자동 저장됩니다.</p>
+  <div class="mods">
+    <a class="mod pop" href="m1.html"><div class="tag2"><span class="no">M1</span><span class="tm">09:00–10:00 · 60분</span></div><div class="theme">경매 파일 한 개로 시작</div><h3>AI가 그려준 시세 그래프, 믿어도 될까?</h3><p>경매 엑셀로 시세표를 만들고, AI 초안의 단위 오류·누락 날짜·명절 평균을 원본으로 찾아 고칩니다.</p><div class="foot"><span>01–09 · W1 · 실습 3개</span><span class="go">들어가기 →</span></div><div class="bg" data-ill="magnifier"></div></a>
+    <a class="mod pop" href="m2.html"><div class="tag2"><span class="no">M2</span><span class="tm">10:00–12:00 · 120분</span></div><div class="theme">전체 평균과 같은 조건 비교</div><h3>AI로 우리 법인의 진짜 경쟁력 비교하기</h3><p>전체 평균이 높은 법인이 정말 잘 받은 걸까요? A~E법인을 같은 조건으로 맞추고, 물량을 반영한 평균을 계산합니다.</p><div class="foot"><span>10–17 · W2 · 실습 3개</span><span class="go">들어가기 →</span></div><div class="bg" data-ill="scale"></div></a>
+    <a class="mod pop" href="m3.html"><div class="tag2"><span class="no">M3</span><span class="tm">13:00–14:00 · 60분</span></div><div class="theme">소매가격과 산지 날씨</div><h3>소비지 가격으로 시세 판단의 빈칸 채우기</h3><p>KAMIS·기상청에서 소매가격과 산지 날씨를 직접 내려받아 경매 자료와 함께 올리고, 100 기준 지수로 한 화면에 놓습니다.</p><div class="foot"><span>18–24 · W3 · 실습 2개</span><span class="go">들어가기 →</span></div><div class="bg" data-ill="sources"></div></a>
+    <a class="mod pop" href="m4.html"><div class="tag2"><span class="no">M4</span><span class="tm">14:00–16:00 · 120분</span></div><div class="theme">당시의 자료로 판단한 뒤 실제 흐름 확인</div><h3>다음 주 시세, 무엇을 보면 예상할 수 있을까?</h3><p>기준일까지의 자료로 과거 추석 사례와 반입물량 패턴을 찾고, 오를 때·비슷할 때·내릴 때의 조건을 씁니다.</p><div class="foot"><span>25–31 · W4 · 실습 3개 + 반입물량 예측</span><span class="go">들어가기 →</span></div><div class="bg" data-ill="scenario"></div></a>
+    <a class="mod pop" href="m5.html"><div class="tag2"><span class="no">M5</span><span class="tm">16:00–18:00 · 120분</span></div><div class="theme">출하자에게 설명하기</div><h3>AI로 출하자에게 보낼 시세 브리핑 만들기</h3><p>세 문장 브리핑, 전화 설명, 문자 메시지를 만들고 숫자와 표현을 점검한 뒤, 다음에도 쓸 질문을 저장합니다.</p><div class="foot"><span>32–41 · W5 · 실습 5개</span><span class="go">들어가기 →</span></div><div class="bg" data-ill="briefing"></div></a>
+    <a class="mod ap pop" href="appendix.html"><div class="tag2"><span class="no">부록</span><span class="tm" style="color:#cfe0c6">실습 지원 A1–A5</span></div><div class="theme" style="color:var(--orange2)">실습 자료 · 질문 모음 · 점검표</div><h3>막히면 여기를 여세요</h3><p>실습 파일 목록, AI 화면 안내, P1~P11 질문 모음, 예시 결과, 최종 브리핑 점검표</p><div class="foot"><span>A1–A5</span><span class="go" style="color:var(--orange2)">들어가기 →</span></div></a>
+  </div>
+  <p class="src" style="margin-top:10px">실습 파일 01·02·05·06은 실제 경매 자료에 근거한 교육용 데이터(법인명 A~E 표기, 일부 수치 변경)입니다. M3의 대체 파일 03·04는 가상 자료, 직접 받는 KAMIS·기상청 자료는 실제 값입니다. · 강사 · 데이터씽킹랩 이승묵 · datathinkinglab.com</p>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script><script src="assets/deck.js"></script>
+<script>
+// 표지 패럴랙스
+(function(){const cv=document.querySelector('.slide.cover');cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;document.querySelectorAll('#heroArt .lay').forEach(l=>{const d=+l.dataset.d;l.style.transform=`translate(${-x*d}px,${-y*d}px)`})})})();
+</script>
+</body></html>

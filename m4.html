@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M4 · 다음 주 시세, 무엇을 보면 예상할 수 있을까? | 서울청과 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css">
+<style>.chip{cursor:pointer;user-select:none;border:2px solid var(--line);background:#fff;border-radius:12px;padding:12px 16px;font-size:18px;font-weight:600;color:var(--ink);transition:all .2s;line-height:1.5}.chip:hover{transform:translateY(-2px)}.chip.on{border-color:var(--orange);background:var(--orange-bg)}
+.pin{display:flex;flex-direction:column;gap:4px;flex:1}.pin label{font-size:15px;font-weight:800;color:var(--orange)}.pin input{font-family:inherit;font-size:20px;padding:8px 10px;border:2px solid var(--orange2);border-radius:10px;width:100%;outline:none}</style></head>
+<body class="deck-body" data-module="M4" data-modtitle="M4 · 당시의 자료로 판단한 뒤 실제 흐름 확인" data-prev="m3.html" data-next="m5.html">
+<div class="deck"><div class="stage">
+
+<!-- 25 -->
+<section class="slide" data-no="25" data-title="가격이 움직이던 날로 돌아가기" data-tags="follow" data-result="기준일까지의 기록 확인">
+  <h2 class="s-title kinetic">가격이 움직이던 날로 돌아가기</h2>
+  <p class="s-sub">우리는 지금 <b>2026-09-28 저녁</b>, 추석 연휴 뒤 첫 경매를 마친 시점에 있습니다. 그 뒤의 가격은 아직 모릅니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.55"><div class="chart-box" style="flex:1"><div class="cap"><b>A법인 · 토마토(일반) 5kg 상자 · 2026-08-03 ~ 09-28</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:520px"><canvas data-chart="c25"></canvas></div></div></div>
+    <div class="col" style="flex:.85;justify-content:center;gap:14px">
+      <div data-ill="rewind" style="height:220px" class="pop"></div>
+      <div class="card pop" style="border-left:8px solid var(--orange)"><h4>새 AI 채팅을 엽니다</h4><p>파일 <b>06_M4_기준일까지.xlsx</b>만 첨부합니다.</p></div>
+      <div class="card soft pop"><p style="font-size:17px">⚠ M1~M3에서 쓴 01·02는 올리지 않습니다(09/29 이후 거래 포함). 이후 가격이 섞이면 당시의 판단을 연습할 수 없습니다.</p></div>
+      <button class="btn orange pop" data-pop="D8" style="align-self:flex-start">⬇ 기준일까지의 자료</button>
+    </div>
+  </div>
+</section>
+
+<!-- 26 -->
+<section class="slide" data-no="26" data-title="실습 09 · 과거에 비슷한 날 찾기" data-tags="follow" data-result="과거 유사 사례와 원본 숫자" data-practice="s26">
+  <h2 class="s-title" style="font-size:38px">실습 09 · 과거에 비슷한 날 찾기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 원본에서 날짜·반입물량·명절 대조</span></h2>
+</section>
+
+<!-- 26-1 -->
+<section class="slide" data-no="26-1" data-title="반입물량으로 다음 경매 미리 보기" data-tags="follow" data-result="요일·명절 반입 패턴과 예측 확인 기준">
+<h2 class="s-title kinetic">반입물량으로 다음 경매 미리 보기</h2>
+<p class="s-sub">수요예측은 <span class="mark">시장에 들어올 반입물량</span>을 미리 보는 것에서 시작합니다. 같은 채팅에서 파일 06으로 확인합니다.</p>
+<div class="s-body">
+<div class="col" style="flex:1.2">
+<div class="chart-box" style="flex:1"><div class="cap"><b>요일별 평균 반입물량과 가격 · A법인 토마토 5kg · 2024-01 ~ 2026-09-28</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:330px"><canvas data-chart="c26b"></canvas></div></div>
+<div style="display:flex;gap:12px">
+<div class="card soft pop" style="flex:1"><h4>① 요일</h4><p style="font-size:17px">월요일 반입이 가장 많고(52.4t) 목요일이 가장 적습니다(36.5t). 가격은 목요일이 가장 높습니다(3,320원/kg).</p></div>
+<div class="card soft pop" style="flex:1"><h4>② 명절 뒤 첫 경매</h4><p style="font-size:17px">직전 경매일 대비 반입물량 2024년 <b>2.0배</b>, 2025년 <b>1.5배</b>, 올해 09/28 <b>3.0배</b></p></div>
+</div>
+</div>
+<div class="col" style="flex:1;gap:12px">
+<div class="card pop" style="border-left:8px solid var(--orange)"><h4>③ 예측은 기준선과 비교해 확인합니다</h4><p style="font-size:17px">“다음 경매일 가격 = 오늘 가격”으로만 두어도 평균 오차는 <b>10.5%</b>입니다. AI의 예측이 이보다 작지 않다면 근거로 쓰기 어렵습니다.</p></div>
+<div class="card pop"><h4>질문 1 · 반입 패턴 찾기</h4><p style="font-size:16px">06의 일별_토마토5kg 시트로 요일별 평균 반입물량과 평균가격을 표로 만들고, 명절 연휴 뒤 첫 경매일의 반입물량이 직전 경매일의 몇 배였는지 계산해 주세요.</p><button class="btn sm orange" style="margin-top:8px" data-copy="06의 일별_토마토5kg 시트로 요일별 평균 반입물량과 평균가격을 표로 만들고, 명절 연휴 뒤 첫 경매일의 반입물량이 직전 경매일의 몇 배였는지 계산해 주세요. 사용한 날짜와 원본 숫자를 함께 보여 주세요.">⧉ 질문 1 복사</button></div>
+<div class="card pop"><h4>질문 2 · 예측과 기준선 비교</h4><p style="font-size:16px">기준일 다음 경매일(09/29)의 반입물량과 가격을 예상하고, “오늘과 같다”는 예측과 과거 오차를 비교해 주세요.</p><button class="btn sm orange" style="margin-top:8px" data-copy="기준일(2026-09-28) 다음 경매일의 반입물량과 가격을 예상해 주세요. 근거로 쓴 날짜와 숫자를 적고, 과거 자료에서 같은 방법으로 예상했을 때의 오차를 '다음 경매일 = 오늘과 같다'고 했을 때의 오차와 비교해 보여 주세요.">⧉ 질문 2 복사</button></div>
+<p class="src pop">반입물량 = 그날 경매된 물량입니다. 소비 수요가 아니라 시장에 들어오는 물량을 예상합니다. 예상값은 27번에서 공개되는 실제 값과 맞춰 봅니다.</p>
+</div>
+</div>
+</section>
+
+<!-- 27 -->
+<section class="slide" data-no="27" data-title="실습 10 · 이후 가격과 맞춰보기" data-tags="check" data-result="판단과 실제 흐름 비교">
+  <h2 class="s-title">실습 10 · 이후 가격과 맞춰보기</h2>
+  <p class="s-sub">강사가 09/29~10/02 가격을 공개하면 아래 칸에 입력하세요. 그래프가 이어집니다. 26-1에서 예상한 값과도 비교합니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.4">
+      <div class="chart-box" style="flex:1"><div class="cap"><b>기준일까지 + 공개 후 가격 (원/kg · A법인 토마토 5kg)</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:390px"><canvas data-chart="c27" id="cv27"></canvas></div></div>
+      <div class="card" style="display:flex;gap:12px;align-items:flex-end;padding:16px 20px">
+        <div class="pin"><label>09/29</label><input data-note="p21" inputmode="numeric" placeholder="원/kg"></div>
+        <div class="pin"><label>09/30</label><input data-note="p22" inputmode="numeric" placeholder="원/kg"></div>
+        <div class="pin"><label>10/01</label><input data-note="p23" inputmode="numeric" placeholder="원/kg"></div>
+        <div class="pin"><label>10/02</label><input data-note="p24" inputmode="numeric" placeholder="원/kg"></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><button class="btn orange" data-pop="D9">이후 가격 보기</button><button class="btn ghost sm" data-reset27>↺ 값 초기화</button></div>
+      </div>
+    </div>
+    <div class="col" style="flex:1;gap:12px">
+      <div class="card pop"><h4>당일과 며칠 뒤, 어떻게 움직였나요?</h4><p>가능한 설명을 골라 근거와 함께 따져 봅니다. (여러 개 선택)</p></div>
+      <span class="chip pop">📦 반입물량 · 연휴 동안 쌓인 물량이 09/28에 한꺼번에 들어왔다</span>
+      <span class="chip pop">🌧 날씨 · 산지에 비가 와서 출하가 몰렸다</span>
+      <span class="chip pop">🎑 명절 수요 · 추석 뒤 수요가 줄었다</span>
+<span class="chip pop">📅 요일 · 월요일은 원래 반입이 많은 날이다</span>
+      <span class="chip pop">🏷 등급 구성 · 같은 조건이 아닌 거래가 섞였다</span>
+      <textarea class="note-input pop" data-note="m4why" rows="3" placeholder="내가 고른 설명과 확인한 원본 숫자"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- 28 -->
+<section class="slide" data-no="28" data-title="휴식 10분" data-tags="brk">
+  <div class="deco" data-depth="25" data-ill="leaves" style="left:-50px;bottom:-50px"></div>
+  <div class="s-body" style="align-items:center">
+    <div class="col" style="flex:.9;align-items:center"><div data-ill="coffee" style="width:340px;height:300px"></div></div>
+    <div class="col" style="flex:1.4;gap:18px">
+      <h2 class="s-title kinetic" style="font-size:64px">휴식 10분</h2>
+      <div class="kpi timer" data-min="10" style="font-size:100px">10:00</div>
+      <button class="btn ghost timer-btn" style="align-self:flex-start">타이머 시작</button>
+      <div class="card pop"><h4>복귀 후 작성할 세 가지 시나리오</h4><div style="display:flex;gap:12px;margin-top:10px"><span class="pill" style="background:#D9483B;font-size:20px;padding:9px 22px">오를 때</span><span class="pill" style="background:#5E8C4A;font-size:20px;padding:9px 22px">비슷할 때</span><span class="pill" style="background:#3C7DB8;font-size:20px;padding:9px 22px">내릴 때</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 29 -->
+<section class="slide" data-no="29" data-title="“이런 조건이면”으로 말하기" data-result="조건 + 확인 자료 짝짓기">
+  <h2 class="s-title kinetic">“이런 조건이면”으로 말하기</h2>
+  <p class="s-sub">“오른다·내린다”를 맞히는 대신, <span class="mark">어떤 조건에서 어떻게 될지</span>와 그 조건을 확인할 자료를 짝지어 말합니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:.85;justify-content:center"><div data-ill="scenario" style="height:420px" class="pop"></div></div>
+    <div class="col" style="flex:1.4;justify-content:center;gap:14px">
+      <div class="card tilt step-item" style="border-left:10px solid #D9483B"><h4>상승 메모</h4><p><b>조건</b> 반입물량이 평소 수준(40t 안팎)으로 빠지면 &nbsp;→&nbsp; <b>확인 자료</b> 다음 경매일 반입량 · 2024·2025년 추석 뒤 회복 속도</p></div>
+      <div class="card tilt step-item" style="border-left:10px solid #5E8C4A"><h4>보합 메모</h4><p><b>조건</b> 반입이 50t 안팎으로 이어지면 &nbsp;→&nbsp; <b>확인 자료</b> 같은 5kg 상자 경매가격</p></div>
+      <div class="card tilt step-item" style="border-left:10px solid #3C7DB8"><h4>하락 메모</h4><p><b>조건</b> 강원 출하가 계속 몰려 70~80t대가 이어지면 &nbsp;→&nbsp; <b>확인 자료</b> 반입량 · 산지 출하 상황</p></div>
+      <p class="src step-item">예시입니다. 실습 11에서는 내가 확인한 사실로 직접 씁니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 30 -->
+<section class="slide" data-no="30" data-title="실습 11 · 다음 주에 볼 조건 세 가지" data-tags="follow" data-result="세 시나리오 한 줄씩" data-practice="s30">
+  <h2 class="s-title" style="font-size:38px">실습 11 · 다음 주에 볼 조건 세 가지 <span style="font-size:22px;color:var(--muted);font-weight:600">· 기준일까지 확인한 사실만</span></h2>
+</section>
+
+<!-- 31 -->
+<section class="slide" data-no="31" data-title="짝에게 내 판단 근거 말하기" data-tags="pair" data-result="상담에 쓸 문장 고르기">
+  <h2 class="s-title kinetic">짝에게 내 판단 근거 말하기</h2>
+  <p class="s-sub">조건 하나와 그 조건을 확인할 자료를 1분 동안 설명합니다. 짝은 “어디서 확인하나요?”를 묻습니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:.8;justify-content:center"><div data-ill="pair" style="height:380px" class="pop"></div></div>
+    <div class="col" style="flex:1.4;gap:14px">
+      <div class="card pop"><h4>말하기 틀</h4><p style="font-size:21px">“제가 볼 조건은 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>이고, <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>에서 확인하겠습니다.”</p></div>
+      <div class="card soft pop"><h4>상담에 쓸 문장 하나 고르기</h4>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <span class="chip">“연휴 때 몰린 물량이 빠지면 가격이 회복될 수 있습니다.”</span>
+          <span class="chip">“물량이 계속 많으면 이번 주는 약세가 이어질 수 있습니다.”</span>
+          <span class="chip">“같은 등급 가격을 보고 출하일을 다시 상의드리겠습니다.”</span>
+        </div></div>
+      <textarea class="note-input pop" data-note="m4talk" rows="2" placeholder="짝의 질문과 내 답을 적어 두세요"></textarea>
+    </div>
+  </div>
+</section>
+
+<!-- W4 -->
+<section class="slide" data-no="W4" data-title="M4 Wrap-up · 맞히기보다 조건을 판단한다" data-tags="wrap" data-result="M4 핵심 메시지 · 기억할 한 가지">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <h2 class="s-title kinetic">M4 Wrap-up · 맞히기보다 조건을 판단한다</h2>
+  <div class="s-body" style="flex-direction:column;gap:18px">
+    <div class="wrap-key pop"><div class="lb">핵심 메시지</div><div class="msg">시세를 맞히는 것이 아니라, <em>어떤 조건에서 가격이 오르고 내리는지</em> 판단하는 힘을 기르는 것이 중요하다.</div></div>
+    <div style="display:flex;gap:18px;flex:1;min-height:0">
+      <div class="card pop" style="flex:1.35"><h4>이 모듈에서 한 것</h4><ul class="wrap-did"><li><b class="no">25–26</b><span>기준일(09/28)까지의 자료로 과거에 비슷한 날 찾기 · 2024·2025년 추석 연휴 뒤 첫 경매</span></li><li><b class="no">26-1</b><span>반입물량의 요일·명절 패턴 찾기 · AI 예측을 “오늘과 같다”는 기준선과 비교</span></li><li><b class="no">27</b><span>AI의 설명을 이후 실제 가격과 맞춰보기 · 바로였나, 며칠 뒤였나, 다른 이유는 없었나</span></li><li><b class="no">29–30</b><span>오를 때·비슷할 때·내릴 때의 조건과 확인 자료</span></li><li><b class="no">31</b><span>짝에게 판단 근거 말하기</span></li></ul></div>
+      <div class="col" style="flex:1;gap:14px">
+        <div class="card wrap-take pop"><h4>브리핑으로 가져갈 것</h4><p><b>다음 경매일에 확인할 조건 하나</b>와 그 조건을 확인할 자료</p></div>
+        <div class="card soft pop" style="flex:1;display:flex;flex-direction:column;gap:8px"><h4>내가 기억할 한 가지</h4><textarea class="note-input" data-note="wrapM4" rows="3" style="flex:1;font-size:18px" placeholder="예) AI 예측은 “오늘과 같다”보다 오차가 작은지 먼저 본다"></textarea></div>
+        <div class="wrap-next pop"><span>3분 · 이어서 16:00 M5</span><a class="btn orange sm" href="m5.html">M5로 이동 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script><script src="assets/deck.js"></script><script src="assets/timer.js"></script>
+<script>
+document.querySelectorAll('.slide[data-no="27"] .chip').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
+document.querySelectorAll('.slide[data-no="31"] .chip').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.slide[data-no="31"] .chip').forEach(x=>x!==c&&x.classList.remove('on'));c.classList.toggle('on')}));
+// 27번: 입력한 이후 가격을 그래프에 반영
+function upd27(){const cv=document.getElementById('cv27'),ch=cv&&Chart.getChart(cv);if(!ch)return;const v=['p21','p22','p23','p24'].map(k=>{const x=document.querySelector(`[data-note="${k}"]`).value.replace(/[^\d]/g,'');return x?+x:null});
+  ch.data.datasets[1].data=[null,null,null,null,null,null,null,3046,...v];ch.update()}
+document.querySelectorAll('.pin input').forEach(i=>i.addEventListener('input',upd27));
+document.querySelector('.slide[data-no="27"]').addEventListener('enter',()=>setTimeout(upd27,50));
+// 27번: 이후 가격 팝업의 [정답 입력하고 그래프에 반영]
+document.addEventListener('click',e=>{if(!e.target.closest('[data-fill27]'))return;const ans={p21:3462,p22:2539,p23:2937,p24:2825};
+  Object.entries(ans).forEach(([k,v])=>document.querySelectorAll(`[data-note="${k}"]`).forEach(i=>{i.value=v.toLocaleString('ko-KR');i.dispatchEvent(new Event('input',{bubbles:true}))}));
+  const x=document.querySelector('.modal .x');x&&x.click();setTimeout(upd27,50)});
+// 27번: 입력 값 초기화
+document.addEventListener('click',e=>{if(!e.target.closest('[data-reset27]'))return;
+  ['p21','p22','p23','p24'].forEach(k=>document.querySelectorAll(`[data-note="${k}"]`).forEach(i=>{i.value='';i.dispatchEvent(new Event('input',{bubbles:true}))}));setTimeout(upd27,50)});
+</script>
+</body></html>

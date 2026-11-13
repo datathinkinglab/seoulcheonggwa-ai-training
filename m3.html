@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M3 · 소비지 가격으로 시세 판단의 빈칸 채우기 | 서울청과 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css">
+<style>.chip{cursor:pointer;user-select:none;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;font-size:17px;font-weight:700;color:var(--ink2);transition:all .2s}.chip:hover{transform:translateY(-2px)}.chip.on{border-color:var(--orange);background:var(--orange-bg);color:#8A4A10}</style></head>
+<body class="deck-body" data-module="M3" data-modtitle="M3 · 소매가격과 산지 날씨" data-prev="m2.html" data-next="m4.html">
+<div class="deck"><div class="stage">
+
+<!-- 18 -->
+<section class="slide" data-no="18" data-title="점심 · 13시에 다시 시작합니다" data-tags="brk">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <div class="s-body" style="align-items:center">
+    <div class="col" style="flex:.9;align-items:center"><div data-ill="lunch" style="width:380px;height:330px" class="float"></div></div>
+    <div class="col" style="flex:1.4;gap:18px">
+      <span class="pill pop" style="align-self:flex-start">12:00 – 13:00</span>
+      <h2 class="s-title kinetic" style="font-size:60px">점심 · 13시에 다시 시작합니다</h2>
+      <p class="lead pop">오후에는 경매 가격 옆에 공공 자료에서 <b>직접 내려받은</b> <b>서울 토마토 소매가격</b>과 <b>강원 산지(인제) 날씨</b>를 함께 놓습니다. 추석 연휴 뒤 경매가는 크게 내렸는데, 마트 가격은 어땠을까요?</p>
+      <div style="display:flex;gap:14px" class="pop">
+        <div class="card tilt" style="flex:1"><span class="pill soft">01</span><h4 style="margin-top:8px">A법인 경매</h4><p>원/상자 · kg · 실제 자료 기반</p></div>
+        <div class="card tilt" style="flex:1"><span class="pill">KAMIS</span><h4 style="margin-top:8px">실제 소매 · 서울</h4><p>원/1kg · 19번에서 받기</p></div>
+        <div class="card tilt" style="flex:1"><span class="pill green">기상청</span><h4 style="margin-top:8px">실제 날씨 · 인제</h4><p>℃ · mm · 19번에서 받기</p></div>
+      </div>
+      <p class="src pop">기상청 자료 다운로드에는 기상자료개방포털 로그인이 필요합니다. 점심 중에 로그인해 두세요.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 19 -->
+<section class="slide" data-no="19" data-title="실습 07 준비 · 공공 자료 내려받아 함께 올리기" data-tags="follow" data-result="실제 소매·날씨 파일 2개 + 경매 01 첨부">
+  <h2 class="s-title kinetic">공공 자료에서 소매가격과 날씨 내려받기</h2>
+  <p class="s-sub">KAMIS와 기상청에서 <span class="mark">같은 기간(2026-09-21~10-02)</span>의 자료를 받아, 경매 파일 01과 함께 AI 채팅에 올립니다. · 12분</p>
+  <div class="s-body" style="gap:18px">
+    <div class="card tilt pop dl-card" style="flex:1;border-top:8px solid var(--orange)">
+      <h4>① KAMIS · 서울 소매가격 <span class="src-badge o">공식 사이트</span></h4>
+      <div class="cond">서울 / 채소류 / 토마토 / 토마토 / 상품 / 2026-09-21~10-02 / 일별</div>
+      <ol><li>[조회 조건 복사] → KAMIS 소매가격 열기</li><li>조건 선택 → <b>검색하기</b></li><li>결과 위 단위 확인 (토마토 <b>1kg</b>)</li><li><b>엑셀다운로드</b> → 파일 확인</li></ol>
+      <div class="save"><b>저장 이름</b> 실제_KAMIS_서울_토마토_상품_20260921-20261002<br><b>확인</b> 결과 위 품목·품종·등급·지역·단위</div>
+      <button class="btn orange sm" data-pop="D5" style="align-self:flex-start;margin-top:auto">KAMIS 받는 법 열기</button>
+      <label style="display:flex;gap:8px;font-size:17px"><input type="checkbox"> 받았고 파일명을 확인했다</label>
+    </div>
+    <div class="card tilt pop dl-card" style="flex:1;border-top:8px solid var(--blue)">
+      <h4>② 기상청 · 인제 일 관측자료 <span class="src-badge o">공식 사이트</span></h4>
+      <div class="cond">종관기상관측(ASOS) / 일 자료 / 인제(211) / 2026-09-21~10-02 / 평균기온·일강수량</div>
+      <ol><li>[조회 조건 복사] → 기상자료개방포털 열기</li><li>자료형태 <b>일</b> · 지점 <b>인제(211)</b> → 조회</li><li>로그인 후 <b>CSV</b> 또는 <b>Excel</b> 저장</li><li>강수 <b>공백</b>과 <b>0</b>을 구분해 확인</li></ol>
+      <div class="save"><b>저장 이름</b> 실제_ASOS_인제_20260921-20261002<br><b>확인</b> 지점명 인제 · 날짜 YYYY-MM-DD</div>
+      <button class="btn orange sm" data-pop="D6" style="align-self:flex-start;margin-top:auto">기상청 받는 법 열기</button>
+      <label style="display:flex;gap:8px;font-size:17px"><input type="checkbox"> 받았고 파일명을 확인했다</label>
+    </div>
+    <div class="col" style="flex:1;gap:14px">
+      <div class="card pop"><h4>③ AI 채팅에 함께 올릴 파일</h4>
+        <div class="attach-list">
+          <div><span class="src-badge v">실제 기반</span>01_A법인_토마토경매.xlsx</div>
+          <div><span class="src-badge o">실제</span>실제_KAMIS_서울_토마토_상품_20260921-20261002</div>
+          <div><span class="src-badge o">실제</span>실제_ASOS_인제_20260921-20261002</div>
+        </div>
+        <p class="src" style="margin-top:10px">새 AI 채팅에서 세 파일을 함께 첨부합니다. 실습 07·08에서 계속 씁니다.</p>
+      </div>
+      <div class="card soft pop"><p style="font-size:16.5px">⚠ 경매는 <b>실제 자료 기반 교육용 데이터(수치 일부 변경)</b>, 소매·날씨는 <b>실제 값</b>입니다. 오늘은 자료를 맞춰 보는 <b>방법</b>을 연습하고, 실제 시세의 원인은 단정하지 않습니다.</p></div>
+      <div class="card soft pop" style="display:flex;flex-direction:column;gap:8px"><p style="font-size:16.5px">접속·로그인이 막히면 가상 파일 03·04로 바로 이어갑니다.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost sm" data-pop="D4V">막히면 · 가상 파일 받기</button><button class="btn ghost sm" data-pop="D7">참고 · API로 자동 받기</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 20 -->
+<section class="slide" data-no="20" data-title="실습 07 · 같은 상품과 단위인지 확인하기" data-tags="follow" data-result="상품·단위 비교표" data-practice="s20">
+  <h2 class="s-title" style="font-size:38px">실습 07 · 같은 상품과 단위인지 확인하기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 경매 01 + 직접 받은 KAMIS 소매</span></h2>
+</section>
+
+<!-- 21 -->
+<section class="slide" data-no="21" data-title="첫날을 100으로 놓으면 보이는 것" data-result="지수 읽는 법">
+  <h2 class="s-title kinetic">첫날을 100으로 놓으면 보이는 것</h2>
+  <p class="s-sub">경매(도매)와 소매는 둘 다 원/kg이어도 거래 단계가 다릅니다. 그래서 수준보다 <span class="mark">흐름</span>을 비교합니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.2"><div class="chart-box" style="flex:1"><div class="cap"><b>100에서 110이 되면?</b></div><div style="height:470px"><canvas data-chart="c21"></canvas></div></div></div>
+    <div class="col" style="flex:1;justify-content:center;gap:16px">
+      <div class="card pop"><h4>지수 = 그날 가격 ÷ 첫날 가격 × 100</h4><p style="font-size:20px">100 → 110이면 시작일 대비 <b style="color:var(--orange)">10% 상승</b><br>100 → 58이면 시작일 대비 <b style="color:var(--g800)">42% 하락</b></p></div>
+      <div class="card soft pop"><h4>예) 경매 09/28</h4><p style="font-size:20px">3,046 ÷ 5,288 × 100 = <b>57.6</b></p></div>
+      <div class="card soft pop"><h4>예) 소매 09/28 (가상 03)</h4><p style="font-size:20px">7,830 ÷ 7,990 × 100 = <b>98.0</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 22 -->
+<section class="slide" data-no="22" data-title="실습 08 · 가격 흐름과 날씨를 한 화면에 놓기" data-tags="follow" data-result="가격 지수 + 날씨 그래프" data-practice="s22">
+  <h2 class="s-title" style="font-size:38px">실습 08 · 가격 흐름과 날씨를 한 화면에 놓기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 경매 01 + 직접 받은 소매·날씨</span></h2>
+</section>
+
+<!-- 24 -->
+<section class="slide" data-no="24" data-title="그래프가 보여준 사실 한 가지" data-tags="check" data-result="사실 한 문장">
+  <h2 class="s-title kinetic">그래프가 보여준 사실 한 가지</h2>
+  <p class="s-sub">내가 만든 그래프에서 함께 움직인 날이나 다르게 움직인 날을 찾아 한 문장으로 씁니다. <span class="mark">원인은 단정하지 않습니다.</span></p>
+  <div class="s-body">
+    <div class="col" style="flex:1.4"><div class="chart-box" style="flex:1"><div class="cap"><b>강사 예시 · 경매·소매 지수와 인제 날씨 (09/21 = 100)</b><span class="vbadge">경매: 실제 기반 · 소매·날씨: 가상</span></div><div style="height:500px"><canvas data-chart="c22"></canvas></div></div></div>
+    <div class="col" style="flex:1;justify-content:center;gap:16px">
+      <div class="card pop"><h4>문장 틀</h4><p style="font-size:19px">[날짜]에 경매 지수는 ___, 소매 지수는 ___로 <b>함께 / 다르게</b> 움직였다. 그 무렵 인제는 ___였다.</p></div>
+      <textarea class="note-input pop" data-note="m3fact" rows="4" placeholder="예) 09/28에 경매 지수는 58로 내렸지만 소매 지수는 98로 거의 그대로였다."></textarea>
+      <div class="card soft pop"><p style="font-size:17px">✔ 소매 값이 빈 날짜는 0이나 앞뒤 평균으로 채우지 않습니다.<br>✔ 예시 그래프의 비는 연휴 중(9/26~27)이라 경매일 축에는 보이지 않습니다. 내가 받은 실제 인제 날씨에서 연휴 날짜도 확인하세요.<br>✔ 경매 숫자는 교육용으로 일부 바꾼 값이므로 “같은 시기에 이렇게 움직였다”까지만 씁니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- W3 -->
+<section class="slide" data-no="W3" data-title="M3 Wrap-up · 외부 요소로 빈칸을 채운다" data-tags="wrap" data-result="M3 핵심 메시지 · 기억할 한 가지">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <h2 class="s-title kinetic">M3 Wrap-up · 외부 요소로 빈칸을 채운다</h2>
+  <div class="s-body" style="flex-direction:column;gap:18px">
+    <div class="wrap-key pop"><div class="lb">핵심 메시지</div><div class="msg">경매가격으로는 보이지 않던 시세의 이유가 <em>외부 요소(마트 가격, 날씨 등)</em>를 함께 보면 드러난다.</div><div class="sub">단, 오늘 함께 본 것은 <b>이유의 후보</b>입니다. 정말 그 때문이었는지는 M4에서 이후 가격으로 확인합니다.</div></div>
+    <div style="display:flex;gap:18px;flex:1;min-height:0">
+      <div class="card pop" style="flex:1.35"><h4>이 모듈에서 한 것</h4><ul class="wrap-did"><li><b class="no">19</b><span>KAMIS·기상청에서 소매가격과 산지 날씨를 직접 내려받아 경매 자료와 함께 AI에 올리기</span></li><li><b class="no">20</b><span>같은 상품인지 먼저 확인: 5kg 상자 15,000원 → 3,000원/kg, 소매는 원/1kg이지만 도매·소매 단계가 다름</span></li><li><b class="no">21–22</b><span>첫날을 100으로 맞춰 경매·소매 흐름과 날씨를 한 화면에</span></li></ul></div>
+      <div class="col" style="flex:1;gap:14px">
+        <div class="card wrap-take pop"><h4>브리핑으로 가져갈 것</h4><p>경매가격 옆에 둔 <b>외부 요소 하나</b>(소매 흐름 또는 날씨)와 그 날짜</p></div>
+        <div class="card soft pop" style="flex:1;display:flex;flex-direction:column;gap:8px"><h4>내가 기억할 한 가지</h4><textarea class="note-input" data-note="wrapM3" rows="3" style="flex:1;font-size:18px" placeholder="예) 단위가 다르면 수준 말고 흐름(지수)만 비교한다"></textarea></div>
+        <div class="wrap-next pop"><span>3분 · 이어서 14:00 M4</span><a class="btn orange sm" href="m4.html">M4로 이동 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script><script src="assets/deck.js"></script>
+<script>document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll(`.chip[data-grp="${c.dataset.grp}"]`).forEach(x=>x!==c&&x.classList.remove('on'));c.classList.toggle('on')}))</script>
+</body></html>

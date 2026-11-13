@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M5 · AI로 출하자에게 보낼 시세 브리핑 만들기 | 서울청과 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css">
+<style>.chip{cursor:pointer;user-select:none;border:2px solid var(--line);background:#fff;border-radius:12px;padding:12px 16px;font-size:18px;font-weight:600;color:var(--ink);transition:all .2s;line-height:1.5}.chip:hover{transform:translateY(-2px)}.chip.on{border-color:var(--orange);background:var(--orange-bg)}
+.fix{display:grid;grid-template-columns:1fr 40px 1.2fr;gap:10px;align-items:center;font-size:19px}.fix .bad{background:#F6E3E1;color:#9B2F25;border-radius:12px;padding:12px 14px;text-decoration:line-through;text-decoration-color:#D9483B}.fix .good{background:var(--g50);color:var(--g900);border-radius:12px;padding:12px 14px;font-weight:700}.fix .ar{color:var(--orange);font-weight:900;font-size:26px;text-align:center}
+.qgroup{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:14px 18px}.qgroup h4{margin:0 0 8px;color:var(--g800);font-size:19px}.qitem{font-size:15px;line-height:1.6;border-top:1px dashed var(--line);padding:8px 0;color:var(--ink2);white-space:pre-wrap}.qitem b{color:var(--orange)}</style></head>
+<body class="deck-body" data-module="M5" data-modtitle="M5 · 출하자에게 설명하기" data-prev="m4.html">
+<div class="deck"><div class="stage">
+
+<!-- 32 -->
+<section class="slide" data-no="32" data-title="첫 전화가 다시 왔습니다" data-tags="check" data-result="쓸 근거 하나">
+  <div class="s-body">
+    <div class="col" style="flex:1.3;justify-content:center;gap:18px">
+      <span class="pill pop" style="align-self:flex-start">16:00 · 다시 첫 질문</span>
+      <h2 class="s-title kinetic" style="font-size:54px">첫 전화가 다시 왔습니다</h2>
+      <div class="card pop" style="border-left:10px solid var(--orange)"><div class="big-q" style="font-size:32px">“<em>왜</em> 값이 떨어졌나요? 다음 물량은 <em>언제</em> 보내면 좋을까요?”</div></div>
+      <div class="card soft pop"><h4>아침에 내가 쓴 답 (01번)</h4><p data-show="first" data-empty="(01번에서 적은 답이 여기에 표시됩니다)" style="font-size:20px"></p></div>
+      <div class="pop"><p style="font-weight:800;color:var(--g800);margin:0 0 8px;font-size:19px">이제 쓸 근거 하나를 고르세요</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip">09/24 → 09/28 가격 −39%</span><span class="chip">반입물량 25.8 → 76.8t (약 3배)</span><span class="chip">같은 조건 법인 비교</span><span class="chip">과거 추석 뒤 회복 (2024·2025)</span><span class="chip">월요일 반입이 가장 많음</span></div></div>
+    </div>
+    <div class="col" style="flex:.9;justify-content:center"><div data-ill="phone" style="height:520px"></div></div>
+  </div>
+</section>
+
+<!-- 33 -->
+<section class="slide" data-no="33" data-title="한 장 브리핑은 세 문장에서 시작합니다" data-result="완성 견본 보기">
+  <h2 class="s-title kinetic">한 장 브리핑은 세 문장에서 시작합니다</h2>
+  <p class="s-sub"><span class="mark">확인한 사실 → 앞으로 볼 조건 → 더 확인할 내용</span> 순서로 씁니다. <span class="hint-key">→</span> 로 한 문장씩.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.3;gap:14px;justify-content:center">
+      <div class="card step-item" style="border-left:10px solid var(--g800)"><h4>① 확인한 사실</h4><p style="font-size:20px">A법인 토마토 5kg 기준, 연휴 뒤 첫 경매(09/28) 가격은 <b>3,046원/kg</b>으로 추석 직전(09/24) 5,033원/kg보다 <b>39%</b> 낮았습니다. 반입물량은 25.8t에서 76.8t으로 <b>약 3배</b> 늘었습니다.</p></div>
+      <div class="card step-item" style="border-left:10px solid var(--orange)"><h4>② 앞으로 볼 조건</h4><p style="font-size:20px">연휴 동안 쌓인 물량이 빠지면 회복할 수 있고(지난 2년은 1주 안에 회복), 반입이 계속 많으면 약세가 이어질 수 있습니다.</p></div>
+      <div class="card step-item" style="border-left:10px solid var(--blue)"><h4>③ 더 확인할 내용</h4><p style="font-size:20px">다음 경매일의 반입물량과 같은 5kg 상자 경매가격을 확인한 뒤 출하 시점을 다시 상의드리겠습니다.</p></div>
+    </div>
+    <div class="col" style="flex:.9"><div class="chart-box" style="flex:1"><div class="cap"><b>브리핑에 붙일 그래프 하나</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:540px"><canvas data-chart="c33"></canvas></div></div></div>
+  </div>
+</section>
+
+<!-- 34 -->
+<section class="slide" data-no="34" data-title="실습 12 · 내 자료로 한 장 브리핑 만들기" data-tags="follow" data-result="한 장 브리핑 초안 + 표·그래프 1개" data-practice="s34">
+  <h2 class="s-title" style="font-size:38px">실습 12 · 내 자료로 한 장 브리핑 만들기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 세 칸을 직접 써서 넣기</span></h2>
+</section>
+
+<!-- 35 -->
+<section class="slide" data-no="35" data-title="휴식 10분" data-tags="brk">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <div class="s-body" style="align-items:center">
+    <div class="col" style="flex:.9;align-items:center"><div data-ill="coffee" style="width:340px;height:300px"></div></div>
+    <div class="col" style="flex:1.4;gap:18px">
+      <h2 class="s-title kinetic" style="font-size:64px">휴식 10분</h2>
+      <div class="kpi timer" data-min="10" style="font-size:100px">10:00</div>
+      <button class="btn ghost timer-btn" style="align-self:flex-start">타이머 시작</button>
+      <div class="card pop"><h4>쉬기 전에 초안을 저장합니다</h4><p>AI 채팅의 브리핑 결과를 복사해 메모장이나 문서에 붙여 두세요. 이 사이트에서 수정한 질문은 브라우저에 자동 저장됩니다.</p><button class="btn orange sm" id="copyBrief" style="margin-top:12px">⧉ 내 브리핑 질문(P10) 복사</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 36 -->
+<section class="slide" data-no="36" data-title="실습 13 · 전화로 말할 문장 만들기" data-tags="follow,pair" data-result="1분 전화 설명" data-practice="s36">
+  <h2 class="s-title" style="font-size:38px">실습 13 · 전화로 말할 문장 만들기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 결과를 짝에게 읽어줍니다</span></h2>
+</section>
+
+<!-- 37 -->
+<section class="slide" data-no="37" data-title="실습 14 · 문자로 보낼 문장 만들기" data-tags="follow" data-result="5줄 문자" data-practice="s37">
+  <h2 class="s-title" style="font-size:38px">실습 14 · 문자로 보낼 문장 만들기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 전화 설명과 숫자·조건이 같은지</span></h2>
+</section>
+
+<!-- 38 -->
+<section class="slide" data-no="38" data-title="실습 15 · 숫자 하나와 표현 하나 점검하기" data-tags="check" data-result="원본 확인 + 표현 수정">
+  <h2 class="s-title">실습 15 · 숫자 하나와 표현 하나 점검하기</h2>
+  <p class="s-sub">숫자는 원본에서 다시 찾고, 근거보다 센 표현은 근거에 맞게 고칩니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:.95">
+      <div class="card pop" style="flex:1"><h4>① 숫자 하나 · 원본에서 찾기</h4>
+        <table class="tb" style="margin-top:10px;box-shadow:none;border:1px solid var(--g100)"><tr><th>브리핑의 숫자</th><th>06 원본 위치</th></tr><tr><td>3,046원/kg</td><td>2026-09-28 · 일별_토마토5kg · 평균가격_원kg</td></tr><tr><td>76.8t</td><td>2026-09-28 · 일별_토마토5kg · 반입물량_kg 76,780</td></tr><tr class="hl"><td>내 숫자</td><td><input class="note-input" data-note="m5num" style="padding:6px 10px;font-size:16px" placeholder="날짜 · 열 이름"></td></tr></table>
+        <button class="btn orange sm" data-pop="D10" style="margin-top:14px">⬇ 근거 파일과 점검표</button>
+        <div data-ill="magnifier" style="height:250px;margin-top:20px"></div>
+      </div>
+    </div>
+    <div class="col" style="flex:1.3">
+      <div class="card pop" style="flex:1;display:flex;flex-direction:column;gap:12px"><h4>② 표현 하나 · 근거에 맞추기 <span class="hint-key">→</span></h4>
+        <div class="fix step-item"><div class="bad">반드시 오릅니다.</div><div class="ar">→</div><div class="good">연휴 때 몰린 물량이 빠지면 오를 수 있습니다.</div></div>
+        <div class="fix step-item"><div class="bad">이번 주는 무조건 떨어집니다.</div><div class="ar">→</div><div class="good">물량이 계속 많으면 약세가 이어질 수 있습니다.</div></div>
+        <div class="fix step-item"><div class="bad">목요일에 보내시면 무조건 비싸게 받습니다.</div><div class="ar">→</div><div class="good">목요일은 평소 반입이 적고 값이 높은 편이지만, 다음 주 물량과 같은 등급 가격을 보고 출하일을 다시 상의드리겠습니다.</div></div>
+        <textarea class="note-input step-item" data-note="m5fix" rows="2" placeholder="내 브리핑에서 고친 표현: 전 → 후"></textarea>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 39 -->
+<section class="slide" data-no="39" data-title="실습 16 · 다음에도 쓸 질문 저장하기" data-tags="follow" data-result="품목·날짜를 바꿔 쓸 질문 양식">
+  <h2 class="s-title">실습 16 · 다음에도 쓸 질문 저장하기</h2>
+  <p class="s-sub">오늘 수정한 질문을 <b>자료 확인 · 분석 · 브리핑</b>으로 모았습니다. 보관용과 바꿔 쓸 양식을 구분해 복사하세요.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.7;overflow:auto;gap:12px;padding-right:6px" id="qlist"></div>
+    <div class="col" style="flex:.8;justify-content:center;gap:14px">
+      <div data-ill="folder" style="height:230px"></div>
+      <button class="btn" id="copyCase" style="font-size:17px;padding:14px">⧉ 현재 사례 그대로 복사 <span style="font-weight:500;opacity:.8">(보관용)</span></button>
+      <button class="btn orange" id="copyTpl" style="font-size:17px;padding:14px">⧉ 품목·날짜를 바꿔 쓸 양식 복사</button>
+      <div style="display:flex;gap:8px"><button class="btn ghost sm" data-show-mode="case">사례 보기</button><button class="btn ghost sm" data-show-mode="tpl">양식 보기</button><button class="btn ghost sm" data-pop="D10">점검표</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 40 -->
+<section class="slide" data-no="40" data-title="처음 답변과 최종 답변" data-tags="pair" data-result="첫 질문에 다시 답하기">
+  <h2 class="s-title kinetic">처음 답변과 최종 답변</h2>
+  <p class="s-sub">출하자와 경매사 역할을 맡아 첫 질문에 답합니다. 짝은 <b>숫자</b>와 <b>앞으로 볼 조건</b>을 확인합니다. 가운데 손잡이를 끌어 비교하세요.</p>
+  <div class="s-body">
+    <div class="ba" style="flex:1.6">
+      <div class="pane before" style="padding-right:54%"><span class="pill soft" style="align-self:flex-start">09:00 · 처음 답변</span><div class="big-q" style="font-size:30px;color:#5C6660" data-show="first" data-empty="(01번에서 적은 답)"></div><p style="color:var(--muted);margin-top:auto">아침에 적은 답</p></div>
+      <div class="pane after"><span class="pill" style="align-self:flex-end">18:00 · 최종 답변</span><textarea class="note-input" data-note="final" style="flex:1;font-size:21px;background:#fff;margin-left:52%;width:48%" placeholder="확인한 사실 → 앞으로 볼 조건 → 더 확인할 내용 순서로 답하세요."></textarea></div>
+      <div class="handle"></div>
+    </div>
+    <div class="col" style="flex:.75;justify-content:center;gap:12px">
+      <div class="card tilt pop"><h4>👤 출하자 역할</h4><p>“왜 값이 떨어졌나요? 다음 물량은 언제 보내면 좋을까요?”</p></div>
+      <div class="card tilt pop"><h4>🎙 경매사 역할</h4><p>세 문장으로 답합니다.</p></div>
+      <div class="card soft pop"><h4>짝의 확인</h4><label style="display:flex;gap:8px;font-size:18px;margin-top:6px"><input type="checkbox"> 숫자가 원본과 같다</label><label style="display:flex;gap:8px;font-size:18px;margin-top:6px"><input type="checkbox"> 앞으로 볼 조건이 있다</label></div>
+    </div>
+  </div>
+</section>
+
+<!-- W5 -->
+<section class="slide" data-no="W5" data-title="M5 Wrap-up · 데이터로 출하자에게 설명한다" data-tags="wrap" data-result="M5 핵심 메시지 · 기억할 한 가지">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <h2 class="s-title kinetic">M5 Wrap-up · 데이터로 출하자에게 설명한다</h2>
+  <div class="s-body" style="flex-direction:column;gap:18px">
+    <div class="wrap-key pop"><div class="lb">핵심 메시지</div><div class="msg">출하자의 질문에는 감이 아닌 데이터로, <em>확인한 사실 → 앞으로 볼 조건 → 더 확인할 내용</em> 순서로 답한다.</div></div>
+    <div style="display:flex;gap:18px;flex:1;min-height:0">
+      <div class="card pop" style="flex:1.35"><h4>이 모듈에서 한 것</h4><ul class="wrap-did"><li><b class="no">33–34</b><span>세 문장으로 시작하는 한 장 브리핑</span></li><li><b class="no">36–37</b><span>전화로 말할 문장, 문자로 보낼 문장</span></li><li><b class="no">38</b><span>숫자는 원본에서, “반드시 오른다” 같은 표현은 근거에 맞게</span></li><li><b class="no">39</b><span>품목·날짜만 바꿔 다시 쓰는 시세 브리핑 질문 양식</span></li></ul></div>
+      <div class="col" style="flex:1;gap:14px">
+        <div class="card wrap-take pop"><h4>브리핑으로 가져갈 것</h4><p>39번에서 복사한 <b>질문 양식</b> · 다음 품목에도 같은 순서로</p></div>
+        <div class="card soft pop" style="flex:1;display:flex;flex-direction:column;gap:8px"><h4>내가 기억할 한 가지</h4><textarea class="note-input" data-note="wrapM5" rows="3" style="flex:1;font-size:18px" placeholder="예) 브리핑을 보내기 전에 숫자 하나와 표현 하나를 점검한다"></textarea></div>
+        <div class="wrap-next pop"><span>3분</span><span>다음 · 41 전체 Wrap-up →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 41 -->
+<section class="slide" data-no="41" data-title="전체 Wrap-up · 오늘 하루 정리" data-tags="wrap" data-result="학습목표 확인 · 내일부터 쓸 순서">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <h2 class="s-title kinetic">전체 Wrap-up · 근거 있게 답하기까지</h2>
+  <div class="s-body" style="flex-direction:column;gap:16px">
+    <div class="goal pop"><span class="lb">학습목표</span><p>경매·소매가격·날씨 등의 자료를 AI로 분석하고, 그 결과를 스스로 확인해 출하자에게 근거 있게 설명할 수 있다.</p></div>
+    <div class="mod-row pop">
+      <div class="mc"><b>M1 · 확인</b><h5>숫자는 원본으로</h5><p>AI의 숫자를 믿을지는 내가 원본으로 확인하고 판단한다.</p></div>
+      <div class="mc"><b>M2 · 비교</b><h5>같은 조건끼리</h5><p>평균이 높다고 더 잘 판 것이 아니다. 같은 조건에서 진짜 차이가 보인다.</p></div>
+      <div class="mc"><b>M3 · 연결</b><h5>외부 요소로 빈칸 채우기</h5><p>소매가격·날씨를 함께 보면 경매가격만으로 보이지 않던 이유가 드러난다.</p></div>
+      <div class="mc"><b>M4 · 판단</b><h5>맞히기보다 조건</h5><p>어떤 조건에서 오르고 내리는지 판단하는 힘을 기른다.</p></div>
+      <div class="mc"><b>M5 · 설명</b><h5>데이터로 출하자에게</h5><p>확인한 사실 → 앞으로 볼 조건 → 더 확인할 내용 순서로 답한다.</p></div>
+    </div>
+    <div style="display:flex;gap:18px;flex:1;min-height:0">
+      <div class="card pop" style="flex:1"><h4>오늘 만든 것</h4>
+        <label style="display:flex;gap:10px;font-size:19px;margin-top:10px"><input type="checkbox"> 출하자용 한 장 브리핑</label>
+        <label style="display:flex;gap:10px;font-size:19px;margin-top:10px"><input type="checkbox"> 전화 설명·문자 초안</label>
+        <label style="display:flex;gap:10px;font-size:19px;margin-top:10px"><input type="checkbox"> 품목·날짜를 바꿔 쓸 질문 양식</label>
+        <label style="display:flex;gap:10px;font-size:19px;margin-top:10px"><input type="checkbox"> 나만의 AI 결과 확인표</label>
+      </div>
+      <div class="card pop" style="flex:1.5"><h4>내일 경매부터 이렇게</h4>
+        <div class="flow" style="margin-top:10px">
+          <div class="card soft" style="flex:1"><span class="num">1</span><p>질문 양식에 <b>품목·날짜</b>를 바꿔 실행</p></div><div class="arrow">→</div>
+          <div class="card soft" style="flex:1"><span class="num">2</span><p>숫자 하나를 <b>원본에서</b> 확인</p></div><div class="arrow">→</div>
+          <div class="card soft" style="flex:1"><span class="num">3</span><p><b>세 칸 브리핑</b>으로 출하자에게 설명</p></div>
+        </div>
+        <p class="src" style="margin-top:12px">실제 자료로 할 때는 출하자 이름·연락처 등 식별 정보를 지운 뒤 승인된 범위의 자료만 올립니다.</p>
+      </div>
+    </div>
+    <div class="pop" style="display:flex;justify-content:space-between;align-items:center"><span class="src" style="font-size:15px">만족도 설문은 운영 담당자가 안내합니다.</span><span style="font-size:24px;font-weight:800;color:var(--g800)">오늘 하루 수고하셨습니다 🍅</span></div>
+  </div>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script><script src="assets/deck.js"></script><script src="assets/timer.js"></script>
+<script>
+document.querySelectorAll('.slide[data-no="32"] .chip').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
+// 39: 질문 모음
+let mode='case';
+const esc=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]);
+function gather(generic){return COURSE.GROUPS.map(([g,keys])=>`■ ${g}\n`+keys.map(k=>`- ${COURSE.PRACTICE[k].p} · ${promptText(k,generic)}`).join('\n')).join('\n\n')}
+function draw39(){document.getElementById('qlist').innerHTML=COURSE.GROUPS.map(([g,keys])=>`<div class="qgroup"><h4>${g}</h4>${keys.map(k=>{const t=esc(promptText(k,mode==='tpl'));return `<div class="qitem"><b>${COURSE.PRACTICE[k].p}</b> · ${mode==='tpl'?t.replace(/\[[^\]]+\]/g,m=>`<b>${m}</b>`):t}</div>`}).join('')}</div>`).join('')}
+document.querySelector('.slide[data-no="39"]').addEventListener('enter',draw39);
+document.querySelectorAll('[data-show-mode]').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.showMode;draw39()}));
+document.getElementById('copyCase').addEventListener('click',e=>copyText('[서울청과 · 강원 토마토 5kg 사례 · 기준일 2026-09-28]\n\n'+gather(false),e.currentTarget));
+document.getElementById('copyTpl').addEventListener('click',e=>copyText('[질문 양식 · 대괄호를 바꿔 쓰세요]\n\n'+gather(true),e.currentTarget));
+document.getElementById('copyBrief').addEventListener('click',e=>copyText(promptText('s34'),e.currentTarget));
+draw39();
+</script>
+</body></html>

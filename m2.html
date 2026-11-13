@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M2 · AI로 우리 법인의 진짜 경쟁력 비교하기 | 서울청과 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css"></head>
+<body class="deck-body" data-module="M2" data-modtitle="M2 · 전체 평균과 같은 조건 비교" data-prev="m1.html" data-next="m3.html">
+<div class="deck"><div class="stage">
+
+<!-- 10 -->
+<section class="slide" data-no="10" data-title="평균가격이 더 높은 법인" data-tags="check" data-result="첫 판단 한 줄">
+  <h2 class="s-title kinetic">평균가격이 더 높은 법인</h2>
+  <p class="s-sub">2026년 9~10월 토마토, 다섯 법인의 <b>전체 거래</b>를 평균 냈습니다. A법인이 C법인보다 더 잘 받았다고 말할 수 있을까요?</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.3"><div class="chart-box" style="flex:1"><div class="cap"><b>전체 평균가격과 거래무게 · 2026년 9~10월 토마토</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:500px"><canvas data-chart="c10"></canvas></div></div></div>
+    <div class="col" style="flex:1;justify-content:center">
+      <div style="display:flex;gap:16px">
+        <div class="card tilt pop" style="flex:1"><p>A법인</p><div class="kpi"><span data-count="3096">0</span><small>원/kg</small></div><p style="margin-top:8px">거래무게 2,069t</p></div>
+        <div class="card tilt pop" style="flex:1"><p>C법인</p><div class="kpi o"><span data-count="2604">0</span><small>원/kg</small></div><p style="margin-top:8px">거래무게 496t</p></div>
+      </div>
+      <div class="card pop"><h4>나의 첫 판단</h4><p>전체 평균과 물량만 보고 한 줄로 적으세요.</p><textarea class="note-input" data-note="m2first" rows="3" placeholder="예) A가 492원/kg 더 높게 받았다" style="margin-top:10px"></textarea></div>
+      <p class="src pop">이 판단은 13번에서 같은 조건으로 다시 확인합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide" data-no="11" data-title="실습 04 · 두 법인의 가격·물량 그래프 만들기" data-tags="follow" data-result="법인별 가격·물량 표와 그래프" data-practice="s11">
+  <h2 class="s-title" style="font-size:38px">실습 04 · 법인별 가격·물량 그래프 만들기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 파일 02를 올립니다</span></h2>
+</section>
+
+<!-- 12 -->
+<section class="slide" data-no="12" data-title="실습 05 · 같은 조건으로 다시 비교하기" data-tags="follow" data-result="같은 조건 비교표와 건수" data-practice="s12">
+  <h2 class="s-title" style="font-size:38px">실습 05 · 같은 조건으로 다시 비교하기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 기간·품종·등급·산지·상자당 무게</span></h2>
+</section>
+
+<!-- 13 -->
+<section class="slide" data-no="13" data-title="좋은 등급이 많으면 평균은 어떻게 될까?" data-result="등급 구성의 영향 설명">
+  <h2 class="s-title kinetic">좋은 등급이 많으면 평균은 어떻게 될까?</h2>
+  <p class="s-sub">전체 평균에서는 A법인이 높았지만, <span class="mark">같은 조건으로 맞추면 순서가 바뀝니다.</span></p>
+  <div class="s-body">
+    <div class="col" style="flex:1.25"><div class="chart-box" style="flex:1"><div class="cap"><b>전체 평균 vs 같은 조건 (원/kg)</b><span class="vbadge">실제 자료 기반 교육용 데이터</span></div><div style="height:490px"><canvas data-chart="c13"></canvas></div></div></div>
+    <div class="col" style="flex:1">
+      <div class="card"><h4>특 등급이 차지하는 비중 (거래무게, 9~10월)</h4>
+        <div style="display:flex;gap:22px;margin-top:10px">
+          <div style="flex:1"><div class="waffle" id="wA"></div><p style="margin-top:8px;text-align:center"><b style="color:var(--g800)">A법인 · 특 96%</b><br>1,982t / 2,069t</p></div>
+          <div style="flex:1"><div class="waffle" id="wB"></div><p style="margin-top:8px;text-align:center"><b style="color:var(--orange)">C법인 · 특 8%</b><br>38t / 496t</p></div>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:8px;font-size:14px;color:var(--ink2)"><span><i style="display:inline-block;width:12px;height:12px;background:#1F5A36;border-radius:3px"></i> 특</span><span><i style="display:inline-block;width:12px;height:12px;background:#F6A25E;border-radius:3px"></i> 상·보통·4등~8등 등</span></div>
+      </div>
+      <div class="card green pop"><p style="font-size:19px">A법인은 거의 모두 <b>특</b>이고, C법인은 <b>특이 아닌 등급</b>이 대부분입니다. 같은 조건(강원·5kg·특·상자)에서는 C법인이 3,261원/kg으로 A법인(2,812)보다 높습니다. 다만 C법인의 같은 조건 거래는 <b>54건·11.6t</b>뿐이라 건수도 함께 말해야 합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="slide" data-no="14" data-title="휴식 10분" data-tags="brk">
+  <div class="deco" data-depth="25" data-ill="leaves" style="left:-50px;bottom:-50px"></div>
+  <div class="s-body" style="align-items:center">
+    <div class="col" style="flex:1;align-items:center"><div data-ill="coffee" style="width:360px;height:320px"></div></div>
+    <div class="col" style="flex:1.3;gap:20px">
+      <h2 class="s-title kinetic" style="font-size:64px">휴식 10분</h2>
+      <div class="kpi timer" data-min="10" style="font-size:110px">10:00</div>
+      <button class="btn ghost timer-btn" style="align-self:flex-start">타이머 시작</button>
+      <div class="card pop"><h4>복귀 후 사용할 두 날짜</h4><div style="display:flex;gap:14px;margin-top:10px"><span class="pill green" style="font-size:24px;padding:10px 24px">2026-09-24</span><span class="pill" style="font-size:24px;padding:10px 24px">2026-09-28</span></div><p style="margin-top:10px">A법인 · 토마토(일반) 5kg 상자 · 두 날의 반입물량이 세 배 차이 납니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" data-no="15" data-title="많이 거래된 날을 평균에 반영하기" data-result="단순평균과 물량가중 평균 차이">
+  <h2 class="s-title kinetic">많이 거래된 날을 평균에 반영하기</h2>
+  <p class="s-sub">10kg은 2,000원/kg, 90kg은 3,000원/kg에 팔렸습니다. 평균은 얼마일까요? <span class="hint-key">→</span> 로 계산을 봅니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1"><div class="card" style="flex:1;padding:10px"><div data-ill="scale" style="width:100%;height:100%"></div></div></div>
+    <div class="col" style="flex:1.1;justify-content:center;gap:14px">
+      <div class="card step-item"><h4>단순평균 · 가격만 더해서 나누기</h4><p style="font-size:22px">(2,000 + 3,000) ÷ 2 = <b style="color:var(--muted);font-size:28px">2,500원/kg</b></p></div>
+      <div class="card step-item" style="border:2px solid var(--orange)"><h4>물량가중 평균 · 총 거래금액 ÷ 총 거래무게</h4><p style="font-size:22px">(2,000×10 + 3,000×90) ÷ 100<br>= 290,000 ÷ 100 = <b style="color:var(--orange);font-size:30px">2,900원/kg</b></p></div>
+      <div class="chart-box step-item" style="height:230px"><canvas data-chart="c15"></canvas></div>
+<div class="card soft step-item"><p style="font-size:17px">📄 파일 02의 <b>평균가_원상자</b>도 물량을 반영하지 않은 값입니다. A법인 09/28 토마토: 단순 평균 <b>2,592</b> vs 물량가중 <b>3,085</b>원/kg</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 16 -->
+<section class="slide" data-no="16" data-title="실습 06 · 물량을 반영해 다시 계산하기" data-tags="follow" data-result="두 날짜 물량가중 평균과 계산식" data-practice="s16">
+  <h2 class="s-title" style="font-size:38px">실습 06 · 물량을 반영해 다시 계산하기 <span style="font-size:22px;color:var(--muted);font-weight:600">· 파일 01의 09/24·09/28 원본으로 확인</span></h2>
+</section>
+
+<!-- 17 -->
+<section class="slide" data-no="17" data-title="같은 조건에서 본 가격 차이" data-tags="check" data-result="비교 조건과 차이 한 문장">
+  <div class="deco" data-depth="30" data-ill="leaves2" style="right:-40px;bottom:-60px"></div>
+  <h2 class="s-title kinetic">같은 조건에서 본 가격 차이</h2>
+  <p class="s-sub">비교 조건을 먼저 쓰고, 발견한 차이를 한 문장으로 적습니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.3;gap:18px">
+      <div class="card pop" style="font-size:26px;line-height:2;color:var(--ink)">
+        <span class="pill soft">기간</span> <span class="pill soft">품종</span> <span class="pill soft">등급</span> <span class="pill soft">산지</span> <span class="pill soft">상자당 무게</span> 기준으로,<br>
+        A법인은 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>원/kg, C법인은 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>원/kg으로<br><u>&nbsp;&nbsp;&nbsp;&nbsp;</u>가 <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>원/kg 높았습니다.
+      </div>
+      <div class="pop"><label style="font-weight:800;color:var(--g800);font-size:19px">내 문장</label><textarea class="note-input" data-note="m2sent" rows="3" style="margin-top:8px" placeholder="예) 9~10월 토마토·특·강원·5kg 상자 기준으로 …"></textarea></div>
+    </div>
+    <div class="col" style="flex:1;justify-content:center">
+      <div class="card soft pop"><h4>처음 판단 (10번)</h4><p data-show="m2first" data-empty="(10번에서 적은 판단이 여기에 표시됩니다)" style="font-size:19px"></p></div>
+      <button class="btn ghost pop" data-reveal=".ans17" style="align-self:flex-start">강사 확인 · 예시 문장</button>
+      <div class="card green ans17 hidden"><p style="font-size:19px">2026년 9~10월 토마토·특·강원·5kg 상자 기준으로, A법인은 2,812원/kg, C법인은 3,261원/kg으로 <b>C법인이 449원/kg 높았습니다.</b> 전체 평균(A 3,096 · C 2,604)과 순서가 반대입니다. 단, C법인은 54건(11.6t)뿐입니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- W2 -->
+<section class="slide" data-no="W2" data-title="M2 Wrap-up · 같은 조건끼리 비교한다" data-tags="wrap" data-result="M2 핵심 메시지 · 기억할 한 가지">
+  <div class="deco" data-depth="25" data-ill="leaves2" style="right:-40px;top:-50px"></div>
+  <h2 class="s-title kinetic">M2 Wrap-up · 같은 조건끼리 비교한다</h2>
+  <div class="s-body" style="flex-direction:column;gap:18px">
+    <div class="wrap-key pop"><div class="lb">핵심 메시지</div><div class="msg">평균가격이 높다고 더 잘 판 것은 아니다. <em>같은 조건끼리 비교해야</em> 진짜 차이가 보인다.</div></div>
+    <div style="display:flex;gap:18px;flex:1;min-height:0">
+      <div class="card pop" style="flex:1.35"><h4>이 모듈에서 한 것</h4><ul class="wrap-did"><li><b class="no">11</b><span>다섯 법인의 가격·물량 그래프 만들기</span></li><li><b class="no">12–13</b><span>전체 평균은 A 3,096 > C 2,604원/kg, 같은 조건(강원·5kg·특·상자)에서는 A 2,812 < C 3,261원/kg (C는 54건)</span></li><li><b class="no">15–16</b><span>물량 반영 평균: 09/24·09/28 단순평균 4,040 → 물량가중 3,546원/kg</span></li><li><b class="no">17</b><span>비교 조건과 가격 차이를 한 문장으로</span></li></ul></div>
+      <div class="col" style="flex:1;gap:14px">
+        <div class="card wrap-take pop"><h4>브리핑으로 가져갈 것</h4><p>비교 조건(기간·품종·등급·산지·상자당 무게)과 건수를 함께 적은 <b>가격 차이 한 문장</b></p></div>
+        <div class="card soft pop" style="flex:1;display:flex;flex-direction:column;gap:8px"><h4>내가 기억할 한 가지</h4><textarea class="note-input" data-note="wrapM2" rows="3" style="flex:1;font-size:18px" placeholder="예) 평균을 보기 전에 등급 구성부터 확인한다"></textarea></div>
+        <div class="wrap-next pop"><span>3분 · 점심 후 13:00 M3</span><a class="btn orange sm" href="m3.html">M3로 이동 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script>
+<script>
+// 와플(상품 비중) 셀 생성
+function waffle(id,a){const w=document.getElementById(id);w.innerHTML=Array.from({length:100},(_,i)=>`<i class="${i<a?'a':'b'}"></i>`).join('')}
+waffle('wA',96);waffle('wB',8);
+</script>
+<script src="assets/deck.js"></script>
+<script src="assets/timer.js"></script>
+</body></html>

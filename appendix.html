@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>부록 · 실습 지원 | 서울청과 AI 활용 교육</title>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/deck.css">
+<style>.qa{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:10px 14px;display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center;font-size:15px;line-height:1.55}.qa b{color:var(--orange);font-size:16px}.qa em{font-style:normal;color:var(--orange);font-weight:800}
+.chk{display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:16px 18px;font-size:19px;cursor:pointer;transition:background .2s}.chk input{width:24px;height:24px;accent-color:#1F5A36;margin-top:2px}.chk:has(input:checked){background:var(--g50)}
+.exbtn{display:flex;flex-direction:column;gap:4px;align-items:flex-start;text-align:left;background:#fff;border:none;border-radius:14px;box-shadow:var(--shadow);padding:14px 16px;cursor:pointer;font-family:inherit;transition:transform .2s}.exbtn:hover{transform:translateY(-3px)}.exbtn b{color:var(--orange);font-size:14px}.exbtn span{font-size:17px;font-weight:700;color:var(--g900)}</style></head>
+<body class="deck-body" data-module="A" data-modtitle="부록 · 실습 지원" data-prev="m5.html">
+<div class="deck"><div class="stage">
+
+<!-- A1 -->
+<section class="slide" data-no="A1" data-title="실습 파일 목록과 배포 기준">
+  <h2 class="s-title">A1 · 실습 파일 목록과 배포 기준</h2>
+  <p class="s-sub">수강생 배포 묶음은 01·02·05·06입니다. 07·08은 강사 자료로 따로 보관합니다. 01·02·05·06은 <b>실제 경매 자료에 근거한 교육용 데이터</b>(법인명 A~E 표기, 가격·물량 일부 변경)이므로 실제 시세로 쓰지 않습니다. 03·04는 M3 대체용 가상 파일이고, M3에서 직접 받는 KAMIS·기상청 자료는 실제 값입니다.</p>
+  <div class="s-body" style="flex-direction:column;gap:14px">
+    <table class="tb">
+      <tr><th>파일</th><th>내용</th><th>여는 때</th><th class="r">받기</th></tr>
+      <tr><td><b>01</b> A법인_토마토경매</td><td>11,639행 · A법인 2026-09-14~10-17 · 거래 1건 = 1행 · 품종·등급(선별 코드)·포장·산지(시도)·상자당 kg·상자수·거래무게·상자당 가격·거래금액·명절구분</td><td>M1 · M2 · M3</td><td class="r"><a class="btn sm ghost" href="files/01_A법인_토마토경매.xlsx" download>⬇</a></td></tr>
+      <tr><td><b>02</b> 법인별_토마토경매</td><td>15,764행 · A~E법인 2026년 9~10월 토마토 · 일자×산지×품종×등급×포장 집계 · 최고·최저·평균가(원/상자)·총거래금액</td><td>M2</td><td class="r"><a class="btn sm ghost" href="files/02_법인별_토마토경매.xlsx" download>⬇</a></td></tr>
+      <tr><td><b>03</b> 가상소매_서울_토마토</td><td>서울 토마토 상품·중품 · 원/1kg · 2026-09-01~10-16 조사일 · 09/30 중품 공백 · <b>교육용 가상 자료</b></td><td>M3 · 막힐 때 대체</td><td class="r"><a class="btn sm ghost" href="files/03_가상소매_서울_토마토.xlsx" download>⬇</a></td></tr>
+      <tr><td><b>04</b> 가상날씨_인제</td><td>인제(211) 예시 · 평균기온 · 일강수량 · 2026-09-01~10-17 매일 · <b>교육용 가상 자료</b></td><td>M3 · 막힐 때 대체</td><td class="r"><a class="btn sm ghost" href="files/04_가상날씨_인제.xlsx" download>⬇</a></td></tr>
+      <tr class="hl"><td><b>실제</b> KAMIS·기상청</td><td>서울 토마토 상품 소매가격(원/1kg) · 인제(211) 평균기온·일강수량 · 2026-09-21~10-02</td><td>M3 · 19번에서 직접 받기</td><td class="r"><button class="btn sm ghost" data-pop="D4">받는 법</button></td></tr>
+      <tr><td><b>05</b> AI초안_오류찾기</td><td>9행 · AI가 만든 것처럼 꾸민 시세표 초안(오류 포함)</td><td>M1 오류 찾기</td><td class="r"><a class="btn sm ghost" href="files/05_AI초안_오류찾기.xlsx" download>⬇</a></td></tr>
+      <tr><td><b>06</b> M4_기준일까지</td><td>A법인 토마토 5kg·대추빨강 3kg 일별 반입물량·가격·주산지·명절구분 · 2024-01-03 ~ 2026-09-28 · 명절일정</td><td>M4 · M5 (새 채팅)</td><td class="r"><a class="btn sm ghost" href="files/06_M4_기준일까지.xlsx" download>⬇</a></td></tr>
+      <tr class="hl"><td><b>07 · 08</b> 강사 자료</td><td>이후 가격(09/29~10/17 일별) · 강사용 확인표(17항목) — 이 사이트에 넣지 않음</td><td>27번 공개 · 강사 준비</td><td class="r">강사 보관</td></tr>
+    </table>
+    <div style="display:flex;gap:10px"><button class="btn orange" data-pop="D0">⬇ 실습 자료 모음 (D0)</button><a class="btn ghost" href="files/서울청과_수강생용_실습데이터.zip" download>수강생용 ZIP 받기</a></div>
+  </div>
+</section>
+
+<!-- A2 -->
+<section class="slide" data-no="A2" data-title="AI 화면 안내">
+  <h2 class="s-title">A2 · AI 파일 첨부 · 질문 복사 · 실행 · 다시 요청</h2>
+  <p class="s-sub">모든 실습은 같은 네 단계입니다. 결과가 이상하면 새로 묻기보다 <span class="mark">다시 요청하는 질문</span>을 씁니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.1"><div class="card" style="flex:1;padding:14px"><div data-ill="chat3" style="width:100%;height:100%"></div></div></div>
+    <div class="col" style="flex:1;justify-content:center">
+      <div class="card tilt"><span class="num">1</span><h4>파일 첨부</h4><p>클립(＋) → 실습 파일 선택 → 첨부 목록의 파일명 확인. M4부터는 <b>새 채팅</b>에서 06만 첨부합니다.</p></div>
+      <div class="card tilt"><span class="num">2</span><h4>질문 복사·붙여넣기</h4><p>슬라이드 오른쪽 [수정한 질문 복사] → 입력창에 Ctrl+V. 복사가 막히면 질문을 드래그해 Ctrl+C.</p></div>
+      <div class="card tilt"><span class="num">3</span><h4>실행</h4><p>보내기 → 표·그래프가 나오면 숫자 하나를 원본에서 찾기</p></div>
+      <div class="card tilt"><span class="num">4</span><h4>다시 요청</h4><p>“이 숫자가 나온 날짜와 원본 열을 보여 주세요.” · “같은 등급만 남겨 다시 비교해 주세요.” · “이 문장에 가격이 달라질 수 있는 조건을 넣어 주세요.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- A3 -->
+<section class="slide" data-no="A3" data-title="P1~P11 수정형 질문 모음">
+  <h2 class="s-title">A3 · P1~P11 수정형 질문 모음</h2>
+  <p class="s-sub">대괄호 부분을 내 품목·날짜·조건으로 바꿔 씁니다.</p>
+  <div class="s-body" style="flex-direction:column;gap:8px;overflow:auto" id="a3list"></div>
+</section>
+
+<!-- A4 -->
+<section class="slide" data-no="A4" data-title="예시 결과">
+  <h2 class="s-title">A4 · 첨부나 그래프 생성이 지연될 때 볼 예시 결과</h2>
+  <p class="s-sub">AI 응답이 늦으면 예시를 펼쳐 원본 대조를 이어갑니다. 예시의 숫자도 원본에서 한 번 더 확인하세요.</p>
+  <div class="s-body" style="display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:min-content;gap:14px">
+    <button class="exbtn" data-ex="ex04"><b>M1 · 04~05</b><span>날짜별 시세표·그래프</span></button>
+    <button class="exbtn" data-ex="ex07"><b>M1 · 07</b><span>원본으로 다시 계산</span></button>
+    <button class="exbtn" data-ex="ex11"><b>M2 · 11</b><span>법인별 등급 구성</span></button>
+    <button class="exbtn" data-ex="ex12"><b>M2 · 12</b><span>같은 조건 비교</span></button>
+    <button class="exbtn" data-ex="ex16"><b>M2 · 16</b><span>물량가중 평균</span></button>
+    <button class="exbtn" data-ex="ex20"><b>M3 · 20</b><span>상품과 단위 확인</span></button>
+    <button class="exbtn" data-ex="ex22"><b>M3 · 22</b><span>가격 지수와 날씨</span></button>
+    <button class="exbtn" data-ex="ex26"><b>M4 · 26</b><span>과거 비슷한 날</span></button>
+    <button class="exbtn" data-ex="ex30"><b>M4 · 30</b><span>다음 주 조건 세 가지</span></button>
+    <button class="exbtn" data-ex="ex34"><b>M5 · 34</b><span>한 장 브리핑</span></button>
+    <button class="exbtn" data-ex="ex36"><b>M5 · 36</b><span>전화 설명</span></button>
+    <button class="exbtn" data-ex="ex37"><b>M5 · 37</b><span>문자 메시지</span></button>
+  </div>
+</section>
+
+<!-- A5 -->
+<section class="slide" data-no="A5" data-title="최종 브리핑 점검표">
+  <div class="deco" data-depth="25" data-ill="leaves" style="left:-50px;bottom:-50px"></div>
+  <h2 class="s-title">A5 · 최종 브리핑 점검표</h2>
+  <p class="s-sub">출하자에게 보내기 전에 다섯 가지를 확인합니다.</p>
+  <div class="s-body">
+    <div class="col" style="flex:1.5;gap:12px;justify-content:center">
+      <label class="chk"><input type="checkbox"><span><b>원본 수치</b> · 브리핑의 숫자를 06 원본에서 날짜·열로 다시 찾았다.</span></label>
+      <label class="chk"><input type="checkbox"><span><b>비교 조건</b> · 품종·등급·크기·포장 kg·기간을 적었다. 명절 거래는 따로 표시했다.</span></label>
+      <label class="chk"><input type="checkbox"><span><b>사실과 예상</b> · 확인한 사실과 앞으로 볼 조건을 나눴다. “반드시·무조건” 같은 표현이 없다.</span></label>
+      <label class="chk"><input type="checkbox"><span><b>추가 확인 사항</b> · 다음 경매일에 확인할 자료(물량·같은 등급 가격·산지 날씨)를 적었다.</span></label>
+      <label class="chk"><input type="checkbox"><span><b>기준일</b> · 전화·문자에는 09/28까지의 사실만 썼다.</span></label>
+    </div>
+    <div class="col" style="flex:.8;align-items:center;justify-content:center">
+      <svg class="ring" viewBox="0 0 120 120" style="width:220px;height:220px"><circle class="bgc" cx="60" cy="60" r="48"/><circle class="fg" id="ringA5" cx="60" cy="60" r="48" data-v="0"/></svg>
+      <div class="kpi" id="pctA5" style="margin-top:-150px;margin-bottom:100px">0<small>/5</small></div>
+      <button class="btn ghost" data-pop="D10">근거 파일과 점검표 (D10)</button>
+    </div>
+  </div>
+</section>
+
+</div></div>
+<script src="assets/chart.umd.min.js"></script><script src="assets/illust.js"></script><script src="assets/course.js"></script><script src="assets/charts.js"></script><script src="assets/deck.js"></script>
+<script>
+const P=['P1','P2','P3','P4','P5','P6','P7','P8','P9','P10','P11'],NM={P1:'시세표',P2:'재검산',P3:'법인별 비교',P4:'같은 조건 비교',P5:'물량가중 평균',P6:'상품과 단위 확인',P7:'가격 흐름과 날씨',P8:'과거 유사 사례',P9:'판단 메모',P10:'한 장 브리핑',P11:'전화·문자'};
+const gen=p=>COURSE.T[p].replace(/\{(\w+)\}/g,(m,k)=>COURSE.GENERIC[k]||m);
+document.getElementById('a3list').innerHTML=P.map(p=>`<div class="qa"><b>${p}<br><span style="font-size:13px;color:var(--g800)">${NM[p]}</span></b><div>${gen(p).replace(/\n/g,' ').replace(/\[[^\]]+\]/g,m=>`<em>${m}</em>`)}</div><button class="btn sm ghost" data-copy="${gen(p).replace(/"/g,'&quot;')}">복사</button></div>`).join('');
+const boxes=[...document.querySelectorAll('.chk input')],ring=document.getElementById('ringA5');
+function upd(){const n=boxes.filter(b=>b.checked).length,C=2*Math.PI*48;ring.style.strokeDasharray=C;ring.style.strokeDashoffset=C*(1-n/5);document.getElementById('pctA5').innerHTML=`${n}<small>/5</small>`}
+boxes.forEach(b=>b.addEventListener('change',upd));
+document.querySelector('.slide[data-no="A5"]').addEventListener('enter',()=>setTimeout(upd,200));
+</script>
+</body></html>
