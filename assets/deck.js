@@ -31,7 +31,16 @@ slides.forEach((sl,i)=>{
 /* ---------- 실습 편집기 ---------- */
 function esc(t){return t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c])}
 function pState(key){const c=CO.PRACTICE[key];if(!S.p[key])S.p[key]={f:{},e:null};c.fields.forEach(f=>{if(S.p[key].f[f[0]]==null)S.p[key].f[f[0]]=f[2]});return S.p[key]}
-function promptText(key,generic){const c=CO.PRACTICE[key],st=pState(key);if(!generic&&st.e!=null)return st.e;return CO.T[c.p].replace(/\{(\w+)\}/g,(m,k)=>generic?(CO.GENERIC[k]||m):(st.f[k]??m))}
+/* 조사 자동 맞춤: 끼워 넣은 값의 마지막 글자 받침에 따라 이/가·을/를·은/는·과/와·으로/로 선택 */
+function batchim(v){v=String(v==null?'':v).trim();let pv;do{pv=v;v=v.replace(/\s*\([^()]*\)$/,'').replace(/[\s\]}'"”’.…·,]+$/,'')}while(v!==pv);if(!v)return null;const ch=v[v.length-1],o=ch.charCodeAt(0)-0xAC00;
+  if(o>=0&&o<11172){const j=o%28;return {has:j>0,l:j===8}}
+  if(/[0-9]/.test(ch))return {has:'0136780'.includes(ch),l:'178'.includes(ch)};
+  const lw=v.toLowerCase();if(/kg$|g$/.test(lw))return {has:true,l:false};if(/t$|m$|n$/.test(lw))return {has:true,l:false};if(/l$/.test(lw))return {has:true,l:true};
+  if(/[a-z%]$/.test(lw))return {has:false,l:false};return null}
+function josa(v,p){if(!p)return '';const r=batchim(v);if(!r)return p;for(const [a,b] of [['이','가'],['을','를'],['은','는'],['과','와'],['으로','로']]){if(p===a||p===b){if(a==='으로')return r.has&&!r.l?a:b;return r.has?a:b}}return p}
+function fillT(t,val,fmt){return t.replace(/\{(\w+)\}((?:으로|이|가|을|를|은|는|과|와|로)(?![가-힣]))?/g,(m,k,p)=>{const v=val(k);if(v==null)return m;return (fmt?fmt(k,v):v)+josa(v,p)})}
+window.josa=josa;
+function promptText(key,generic){const c=CO.PRACTICE[key],st=pState(key);if(!generic&&st.e!=null)return st.e;return fillT(CO.T[c.p],k=>generic?CO.GENERIC[k]:st.f[k])}
 window.promptText=promptText;
 function buildPractice(sl,key){
   const c=CO.PRACTICE[key];if(!c)return;const st=pState(key);
@@ -63,7 +72,7 @@ function buildPractice(sl,key){
   const pv=$('.preview',wrap),state=$('.edit-state',wrap),rb=$('[data-act=rebuild]',wrap),eb=$('[data-act=edit]',wrap);
   function render(){
     if(st.e!=null){pv.textContent=st.e;state.textContent='직접 수정한 질문';rb.classList.remove('hidden')}
-    else{pv.innerHTML=esc(CO.T[c.p]).replace(/\{(\w+)\}/g,(m,k)=>{const f=c.fields.find(x=>x[0]===k);const col=f?CO.C[f[3]]:'#333';return `<span class="tk" style="color:${col};background:${col}1a">${esc(String(st.f[k]))}</span>`});state.textContent='';rb.classList.add('hidden')}
+    else{pv.innerHTML=fillT(esc(CO.T[c.p]),k=>st.f[k]==null?null:String(st.f[k]),(k,v)=>{const f=c.fields.find(x=>x[0]===k);const col=f?CO.C[f[3]]:'#333';return `<span class="tk" style="color:${col};background:${col}1a">${esc(v)}</span>`});state.textContent='';rb.classList.add('hidden')}
   }
   render();
   $$('input',wrap).forEach(inp=>inp.addEventListener('input',()=>{st.f[inp.dataset.k]=inp.value;save();if(st.e==null)render();else{state.textContent='직접 수정 중 · 입력값을 반영하려면 [입력값으로 다시 만들기]';}}));

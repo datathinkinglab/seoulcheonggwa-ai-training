@@ -45,7 +45,7 @@ c07ex(cv){const d=["09/23", "09/24", "09/28", "09/29", "09/30", "10/01", "10/02"
 /* M2 · 전체 평균 (5개 법인) */
 c10(cv){const L=Object.keys(OV);return new Chart(cv,{type:'bar',data:{labels:L,datasets:[{label:'전체 평균가격 (원/kg)',data:L.map(k=>OV[k][0]),backgroundColor:L.map(k=>k==='A법인'?G8:k==='C법인'?O:GR),borderRadius:12,yAxisID:'y',barPercentage:.55},{label:'거래무게 (t)',data:L.map(k=>OV[k][1]),backgroundColor:L.map(k=>k==='A법인'?G3:k==='C법인'?O2:'#DDE3DE'),borderRadius:12,yAxisID:'y2',barPercentage:.55}]},
  options:{animation:{delay:seq},scales:{x:{grid:{display:false},ticks:{font:{size:17,weight:'700'}}},y:{min:0,max:3500,title:{display:true,text:'원/kg'},grid,ticks:{callback:won}},y2:{position:'right',min:0,max:4000,title:{display:true,text:'t'},grid:{display:false}}},plugins:{tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${won(c.raw)}`}}}}})},
-c11ex(cv){const L=Object.keys(OV);return new Chart(cv,{type:'bar',data:{labels:L,datasets:[{label:'특',data:L.map(k=>COMP['특'][k]),backgroundColor:G8,borderRadius:6},{label:'상',data:L.map(k=>COMP['상'][k]),backgroundColor:G3,borderRadius:6},{label:'그 외 (보통·4등~8등·등외·.)',data:L.map(k=>COMP['그 외'][k]),backgroundColor:O2,borderRadius:6}]},options:{indexAxis:'y',animation:{delay:seq},scales:{x:{stacked:true,title:{display:true,text:'거래무게 (t) · 2026년 9~10월 토마토'},grid},y:{stacked:true,grid:{display:false},ticks:{font:{size:16,weight:'700'}}}}}})},
+c11ex(cv){const L=Object.keys(OV);return new Chart(cv,{type:'bar',data:{labels:L,datasets:[{label:'특',data:L.map(k=>COMP['특'][k]),backgroundColor:G8,borderRadius:6},{label:'상',data:L.map(k=>COMP['상'][k]),backgroundColor:G3,borderRadius:6},{label:'그 외 (보통·4등~8등·등외 등)',data:L.map(k=>COMP['그 외'][k]),backgroundColor:O2,borderRadius:6}]},options:{indexAxis:'y',animation:{delay:seq},scales:{x:{stacked:true,title:{display:true,text:'거래무게 (t) · 2026년 9~10월 토마토'},grid},y:{stacked:true,grid:{display:false},ticks:{font:{size:16,weight:'700'}}}}}})},
 /* M2 · 전체 vs 같은 조건 */
 c13(cv){return new Chart(cv,{type:'bar',data:{labels:['전체 평균','같은 조건 (강원·5kg·특·상자)'],datasets:[{label:'A법인',data:[3096,2812],backgroundColor:G8,borderRadius:10},{label:'C법인',data:[2604,3261],backgroundColor:O,borderRadius:10}]},
  options:{animation:{delay:seq,...done},scales:{x:{grid:{display:false},ticks:{font:{size:15,weight:'700'}}},y:{min:0,max:3800,grid,ticks:{callback:won},title:{display:true,text:'원/kg · 2026년 9~10월 토마토'}}},plugins:{callouts:{list:[{ds:0,i:0,text:'A가 높음',color:G8},{ds:1,i:1,text:'C가 높음 · 54건뿐',color:O}]},tooltip:{callbacks:{label:c=>` ${c.dataset.label}: ${won(c.raw)} 원/kg`}}}}})},
@@ -156,7 +156,7 @@ ex22:{p:`첨부한 세 파일(01 경매 · KAMIS 서울 소매 · ASOS 인제 �
 4. 09/21을 100으로 놓고 지수 = 그날 가격 ÷ 09/21 가격 × 100 (소수 첫째 자리)으로 계산합니다.
 5. 표 열: 날짜 | 경매 원/kg | 경매 지수 | 소매 원/1kg | 소매 지수 | 인제 평균기온(℃) | 일강수량(mm)
 6. 그래프 하나에: 경매 지수·소매 지수는 실선(왼쪽 축 40~110), 인제 평균기온은 점선(오른쪽 축 ℃), 일강수량은 막대로 그립니다. 09/24~09/28 구간에 "추석 연휴" 음영을 넣습니다.
-7. 연휴 중(09/24~27) 인제 날씨는 경매일 축에 안 보이므로 표 아래에 따로 적습니다.
+7. 연휴 중(09/25~27) 인제 날씨는 경매일 축에 안 보이므로 표 아래에 따로 적습니다.
 8. 마지막에 09/28 경매 지수와 소매 지수를 비교하는 문장 한 줄을 씁니다. 원인은 단정하지 않습니다.`,
  n:'예시의 소매·날씨는 가상 03·04라서, 실제 KAMIS·ASOS 파일을 쓰면 소매 지수·날씨 숫자는 달라집니다. 경매 지수(09/28 57.6)는 같게 나와야 합니다.'},
 ex26:{p:`첨부한 06 자료로 기준일 2026-09-28과 비슷한 과거 사례를 찾아 표 1개와 그래프 1개로 정리해 주세요.
