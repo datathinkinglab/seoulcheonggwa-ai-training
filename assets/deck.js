@@ -7,7 +7,7 @@ try{S=Object.assign(S,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 window.COURSE_STATE=S;
 const CO=window.COURSE, MOD=document.body.dataset.module||'';
-const TAGS={demo:['t-demo','강사 시연'],follow:['t-follow','따라 하기'],check:['t-check','직접 확인'],pair:['t-pair','짝 활동'],brk:['t-break','휴식'],wrap:['t-wrap','Wrap-up']};
+const TAGS={demo:['t-demo','강사 시연'],follow:['t-follow','따라 하기'],check:['t-check','직접 확인'],pair:['t-pair','짝 활동'],brk:['t-break','휴식'],wrap:['t-wrap','Wrap-up'],fun:['t-fun','☕ 쉬어가기 코너']};
 
 const stage=$('.stage'), slides=$$('.slide',stage);
 let cur=0, modalOpen=false, charts={};

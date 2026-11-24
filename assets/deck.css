@@ -224,3 +224,129 @@ table.tb tr.hl td{background:var(--orange-bg)}
 .slide>.s-foot{position:absolute;right:34px;bottom:9px;z-index:15;display:flex;align-items:center;gap:8px;pointer-events:none;opacity:.6}
 .s-foot img{height:15px;width:auto;display:block}
 .s-foot span{font-size:11.5px;font-weight:600;color:var(--muted);letter-spacing:.01em;white-space:nowrap}
+
+/* ===== 쉬어가기 코너 ===== */
+.tag.t-fun{color:#fff;background:linear-gradient(90deg,#EE7A2B,#F2A93B);border-color:transparent}
+.slide.fun{background:radial-gradient(circle at 92% 8%,#FFE7CF 0,rgba(255,231,207,0) 34%),radial-gradient(circle at 4% 96%,#E6F0DC 0,rgba(230,240,220,0) 30%),#FFFBF5}
+.slide.fun .s-title{color:var(--g900)}
+.fun-dots{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(rgba(238,122,43,.14) 2px,transparent 2.5px);background-size:34px 34px;-webkit-mask-image:linear-gradient(135deg,transparent 55%,#000 100%);mask-image:linear-gradient(135deg,transparent 55%,#000 100%)}
+.fun-kicker{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--g900);color:#fff;font-weight:800;font-size:17px;border-radius:999px;padding:8px 18px 8px 10px}
+.fun-kicker i{font-style:normal;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--orange);font-size:16px}
+/* 미션 카드 */
+.mis{background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:18px 22px;display:flex;flex-direction:column;gap:10px;position:relative}
+.mis .mh{display:flex;align-items:center;gap:12px}
+.mis .mh b{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--orange);color:#fff;font-size:20px;font-weight:900}
+.mis .mh b.g{background:var(--g800)}.mis .mh b.y{background:var(--yellow);color:var(--g900)}.mis .mh b.bl{background:var(--blue)}
+.mis .mh h4{margin:0;font-size:22px;color:var(--g900);font-weight:800}
+.mis .mh small{font-size:15px;color:var(--muted);font-weight:600;margin-left:auto}
+.mis p{margin:0;font-size:17px;line-height:1.55;color:var(--ink2)}
+.say{display:flex;align-items:center;gap:12px;background:#FFF6EC;border:2px dashed var(--orange2);border-radius:16px;padding:12px 14px 12px 18px}
+.say span{flex:1;font-size:20px;font-weight:700;line-height:1.5;color:var(--g900)}
+.say span::before{content:"💬 ";font-size:18px}
+.say .btn{flex:none}
+.say.g{background:var(--g50);border-color:var(--g300)}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}
+.chips2 button{border:1.5px solid var(--g300);background:#fff;border-radius:999px;padding:8px 14px;font-size:16px;font-weight:700;color:var(--g800);cursor:pointer;transition:all .15s}
+.chips2 button:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+.chips2 button.copied{background:var(--g800);color:#fff;border-color:var(--g800)}
+.chips2 .ar{align-self:center;color:var(--g500);font-weight:900}
+.safe{display:flex;align-items:center;gap:10px;background:#FDECEA;border-radius:12px;padding:9px 14px;font-size:15px;font-weight:700;color:#9B2C22}
+.formula{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.formula .fb{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:12px 20px;font-size:22px;font-weight:900;color:var(--g900)}
+.formula .fb small{display:block;font-size:14px;font-weight:700;color:var(--muted)}
+.formula .fb.o{background:var(--orange);color:#fff}.formula .fb.o small{color:#FFE3CC}
+.formula .pl{font-size:28px;font-weight:900;color:var(--orange)}
+/* ChatGPT 화면 지도 (구조 예시) */
+.gpt{flex:1;background:#fff;border-radius:22px;box-shadow:var(--shadow-lg);display:flex;overflow:hidden;position:relative;min-height:0}
+.gpt .sb{width:150px;background:#F4F5F3;padding:16px 12px;display:flex;flex-direction:column;gap:10px;border-right:1px solid #E6E8E4}
+.gpt .sb .nw{background:#fff;border:1.5px solid #D9DDD6;border-radius:10px;padding:9px 10px;font-weight:800;font-size:15px;color:var(--ink)}
+.gpt .sb i{display:block;height:9px;border-radius:5px;background:#E2E5DF;margin:4px 2px}
+.gpt .mn{flex:1;display:flex;flex-direction:column;padding:16px 22px;gap:12px;position:relative}
+.gpt .tp{font-weight:800;font-size:15px;color:var(--ink2)}
+.gpt .u{align-self:flex-end;background:#EEF0EC;border-radius:16px;padding:10px 16px;font-size:16px;font-weight:600;max-width:78%}
+.gpt .a{font-size:16px;line-height:1.6;color:var(--ink);max-width:92%}
+.gpt .acts{display:flex;gap:10px;font-size:15px;color:var(--muted);font-weight:700}
+.gpt .acts span{border:1px solid #E1E4DE;border-radius:8px;padding:3px 9px}
+.gpt .ib{margin-top:auto;display:flex;align-items:center;gap:10px;border:1.5px solid #D4D8D0;border-radius:24px;padding:10px 12px;box-shadow:0 6px 16px rgba(0,0,0,.05)}
+.gpt .ib .ic{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#F1F3EF;font-size:18px;font-weight:800;color:var(--ink)}
+.gpt .ib .ph{flex:1;color:#9AA39C;font-size:16px}
+.gpt .ib .snd{background:var(--ink);color:#fff}
+.gpt .co{position:absolute;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:16px;box-shadow:0 0 0 4px rgba(238,122,43,.22);z-index:3}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
+.legend div{display:flex;gap:9px;align-items:flex-start;font-size:16px;line-height:1.4;color:var(--ink2)}
+.legend b{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#fff;font-size:13px}
+.legend em{font-style:normal;font-weight:800;color:var(--g900)}
+/* 포스터·인포그래픽 견본 */
+.poster{flex:1;border-radius:18px;overflow:hidden;position:relative;background:linear-gradient(170deg,#163C25 0,#1F5A36 55%,#EE7A2B 140%);color:#fff;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;padding:26px 26px 20px}
+.poster .pk{font-size:15px;font-weight:800;letter-spacing:.18em;opacity:.8}
+.poster h3{margin:10px 0 0;font-size:44px;line-height:1.15;font-weight:900;letter-spacing:-.03em}
+.poster .sun{position:absolute;right:-40px;top:70px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,#FFD08A 0,#F6A25E 55%,rgba(246,162,94,0) 72%)}
+.poster .art{flex:1;position:relative;min-height:0}
+.poster .pf{display:flex;justify-content:space-between;font-size:14px;font-weight:700;opacity:.85;border-top:1px solid rgba(255,255,255,.3);padding-top:10px}
+.ig{display:flex;align-items:stretch;gap:8px}
+.ig .st{flex:1;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:14px 10px;text-align:center;position:relative}
+.ig .st .e{font-size:40px;line-height:1.2}
+.ig .st b{display:block;font-size:17px;color:var(--g900);margin-top:4px}
+.ig .st small{display:block;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.35}
+.ig .st .n{position:absolute;left:10px;top:8px;font-size:13px;font-weight:900;color:var(--orange)}
+.ig .ar{align-self:center;color:var(--orange);font-weight:900;font-size:22px}
+/* 게임 */
+.game{position:relative;flex:1;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);background:linear-gradient(180deg,#DDEFFB 0,#F4FAF0 70%,#CFE3BE 100%);min-height:0;cursor:none}
+.game canvas{display:block;width:100%;height:100%}
+.game .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(23,63,39,.55);color:#fff;text-align:center;cursor:default}
+.game .ov h3{margin:0;font-size:46px;font-weight:900;letter-spacing:-.02em}
+.game .ov p{margin:0;font-size:20px;font-weight:600;line-height:1.6}
+.game .ov.hide{display:none}
+.game .hud{position:absolute;left:16px;right:16px;top:12px;display:flex;justify-content:space-between;pointer-events:none}
+.game .hud span{background:rgba(255,255,255,.92);border-radius:12px;padding:6px 14px;font-weight:900;font-size:22px;color:var(--g900);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.game .hud span.o{color:var(--orange)}
+.scoreb{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.scoreb div{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:12px 16px}
+.scoreb b{font-size:40px;font-weight:900;color:var(--g800);letter-spacing:-.02em}
+.scoreb b.o{color:var(--orange)}
+.scoreb p{margin:0;font-size:15px;font-weight:700;color:var(--muted)}
+.howto{display:flex;gap:8px}
+.howto div{flex:1;background:var(--g50);border-radius:14px;padding:10px 12px;font-size:15.5px;font-weight:700;color:var(--g800);line-height:1.4}
+.howto div b{display:block;color:var(--orange);font-size:14px}
+.qcount{display:flex;align-items:center;gap:10px}
+.qcount button{width:44px;height:44px;border-radius:12px;border:none;background:var(--g800);color:#fff;font-size:24px;font-weight:900;cursor:pointer}
+.qcount output{min-width:64px;text-align:center;font-size:40px;font-weight:900;color:var(--orange)}
+.ig .st{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ig.big .st .e{font-size:64px}
+.ig.big .st b{font-size:21px}
+.ig.big .st small{font-size:15px}
+/* 틀린 곳 찾기 게임 */
+.spot{position:relative;flex:1;min-height:0;background:#fff;border-radius:22px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;padding:20px 26px;gap:14px;overflow:hidden}
+.spot .bar{display:flex;align-items:center;gap:12px}
+.spot .rd{background:var(--g800);color:#fff;font-weight:900;font-size:17px;border-radius:10px;padding:6px 12px}
+.spot .cat{background:var(--orange-bg);color:#8A4A10;font-weight:800;font-size:16px;border-radius:999px;padding:6px 14px}
+.spot .tbar{flex:1;height:12px;border-radius:999px;background:var(--g50);overflow:hidden}
+.spot .tbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:999px;transition:width .1s linear}
+.spot .sec{font-weight:900;font-size:20px;color:var(--orange);min-width:44px;text-align:right}
+.spot .qq{align-self:flex-end;background:#EEF0EC;border-radius:18px;padding:12px 18px;font-size:21px;font-weight:700;color:var(--ink);max-width:80%}
+.spot .aa{display:flex;gap:14px;align-items:flex-start}
+.spot .aa .av{flex:none;width:46px;height:46px;border-radius:50%;background:var(--g800);color:#fff;display:grid;place-items:center;font-weight:900;font-size:16px}
+.spot .aa .tx{font-size:29px;line-height:1.9;color:var(--ink);font-weight:600}
+.spot .sp{cursor:pointer;border-radius:8px;padding:2px 5px;border-bottom:3px dotted var(--g300);transition:background .15s}
+.spot .sp:hover{background:#FFF3CF;border-bottom-color:var(--orange)}
+.spot .sp.hit{background:#D7EBCB;border-bottom:3px solid var(--g800);color:var(--g900)}
+.spot .sp.miss{background:#FADBD7;border-bottom-color:var(--red);animation:shake .4s}
+.spot .sp.show{background:#FFE2C9;border-bottom:3px solid var(--orange)}
+.spot.done .sp{cursor:default}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.spot .fb{margin-top:auto;border-radius:16px;padding:14px 18px;font-size:19px;line-height:1.55;display:none;gap:14px;align-items:center}
+.spot .fb.on{display:flex}
+.spot .fb.good{background:var(--g50);color:var(--g900)}
+.spot .fb.bad{background:#FDECEA;color:#7A2219}
+.spot .fb b.big{font-size:26px;white-space:nowrap}
+.spot .fb .btn{margin-left:auto;flex:none}
+.spot .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:rgba(23,63,39,.9);color:#fff;text-align:center;z-index:5;padding:30px}
+.spot .ov.hide{display:none}
+.spot .ov h3{margin:0;font-size:48px;font-weight:900}
+.spot .ov p{margin:0;font-size:21px;line-height:1.6;font-weight:600}
+.spot .ov .rs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:760px}
+.spot .ov .rs span{background:rgba(255,255,255,.14);border-radius:10px;padding:6px 12px;font-size:16px;font-weight:700}
+.spot .pts{position:absolute;right:30px;top:70px;font-size:40px;font-weight:900;color:var(--g800);opacity:0;pointer-events:none}
+.spot .pts.go{animation:ptsUp .9s ease-out}
+.spot .pts.neg{color:var(--red)}
+@keyframes ptsUp{0%{opacity:0;transform:translateY(10px)}20%{opacity:1}100%{opacity:0;transform:translateY(-40px)}}

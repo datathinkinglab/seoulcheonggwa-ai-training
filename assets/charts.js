@@ -77,7 +77,7 @@ c27(cv){const L=C27L,n=L.indexOf('09/28');return new Chart(cv,{type:'line',data:
 c33(cv){return new Chart(cv,{data:{labels:['09/24 (추석 직전)','09/28 (연휴 뒤 첫 경매)'],datasets:[{type:'bar',label:'반입물량 (t)',data:[25.8,76.8],backgroundColor:[G3,G8],borderRadius:10,yAxisID:'y2',barPercentage:.5},{type:'line',label:'경매가격 (원/kg)',data:[5033,3046],borderColor:O,backgroundColor:O,borderWidth:4,pointRadius:8,yAxisID:'y'}]},
  options:{animation:{delay:seq,...done},scales:{x:{grid:{display:false},ticks:{font:{size:16,weight:'700'}}},y:{min:2000,max:6000,grid,ticks:{callback:won}},y2:{position:'right',min:0,max:100,grid:{display:false}}},plugins:{callouts:{list:[{ds:1,i:1,text:'−39%',color:O,dy:-34},{ds:0,i:1,text:'약 3배',color:G8,dy:34}]}}}})},
 /* 메인 · 시간 구성 */
-cTime(cv){return new Chart(cv,{type:'doughnut',data:{labels:['설명·시연','수강생 실습·확인','모듈 정리(Wrap-up)','휴식'],datasets:[{data:[82,346,22,30],backgroundColor:[G8,O,'#5E8C4A',G3],borderWidth:0,hoverOffset:14}]},options:{cutout:'68%',animation:{animateRotate:true,duration:1400},plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw}분`}}}}})}
+cTime(cv){return new Chart(cv,{type:'doughnut',data:{labels:['설명·시연','수강생 실습·확인','모듈 정리(Wrap-up)','쉬어가기 코너'],datasets:[{data:[82,356,22,20],backgroundColor:[G8,O,'#5E8C4A',G3],borderWidth:0,hoverOffset:14}]},options:{cutout:'68%',animation:{animateRotate:true,duration:1400},plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw}분`}}}}})}
 };
 window.CH=CH;
 
